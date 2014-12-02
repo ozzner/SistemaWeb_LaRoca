@@ -5,7 +5,16 @@
         private $enseñanzaID;
         private $fechaInicio;
         private $fechaFin;
+        private $nombre;
         
+        public function getNombre() {
+            return $this->nombre;
+        }
+
+        public function setNombre($nombre) {
+            $this->nombre = $nombre;
+        }
+
         public function getEnseñanzaID() {
             return $this->enseñanzaID;
         }

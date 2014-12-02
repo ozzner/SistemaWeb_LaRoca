@@ -2,15 +2,12 @@
 
 class AsistenciaDetalleModel{
     
-    private $asistenciaID;
+
     private $alumnoID;
     private $estado;
+    private $asistencia_fecha;
+    private $temaProfesorID;
     
-    
-    public function getAsistenciaID() {
-        return $this->asistenciaID;
-    }
-
     public function getAlumnoID() {
         return $this->alumnoID;
     }
@@ -19,8 +16,12 @@ class AsistenciaDetalleModel{
         return $this->estado;
     }
 
-    public function setAsistenciaID($asistenciaID) {
-        $this->asistenciaID = $asistenciaID;
+    public function getAsistencia_fecha() {
+        return $this->asistencia_fecha;
+    }
+
+    public function getTemaProfesorID() {
+        return $this->temaProfesorID;
     }
 
     public function setAlumnoID($alumnoID) {
@@ -30,6 +31,15 @@ class AsistenciaDetalleModel{
     public function setEstado($estado) {
         $this->estado = $estado;
     }
+
+    public function setAsistencia_fecha($asistencia_fecha) {
+        $this->asistencia_fecha = $asistencia_fecha;
+    }
+
+    public function setTemaProfesorID($temaProfesorID) {
+        $this->temaProfesorID = $temaProfesorID;
+    }
+
 
 
 }
