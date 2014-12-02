@@ -17,7 +17,7 @@ $mensaje = $_REQUEST["message"];
         
         <section id="main_login">
             <div>Esto es un encabezado</div>
-            <form id="form_login" method="post" action="authentication.php">
+            <form id="form_login" method="post" action="../util/util_autenticacion.php">
                 <h1>Inicia sesión con tu usuario y contraseña</h1>
                 <div class="controles_form">
                     <input type="text" placeholder="Usuario" name="usuario"/><br>

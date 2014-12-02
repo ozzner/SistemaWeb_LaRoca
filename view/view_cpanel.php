@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    include_once '../handler/handler_sesiones.php';
+?>
 <html>
     <head>
         <meta charset="UTF-8">

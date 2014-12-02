@@ -78,8 +78,19 @@ class AccesoController {
     }
     
     
-    protected function getAllDataUser($param) {
+    public function getAllDataUser($usuarioID) {
+        $query = "Select * From acceso acc
+                  Inner Join profesor pro On acc.profesorID = pro.profesorID
+                  Where usuarioID = $usuarioID;";
         
+        $data = $this->conexion->setQuery(utf8_decode($query));
+        $error = $this->conexion->getError();
+        
+        if (!$error) {
+            return $data;
+        }else{
+            return FALSE;
+        }
     }
 
 }
