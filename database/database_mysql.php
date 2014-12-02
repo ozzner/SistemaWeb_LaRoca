@@ -48,11 +48,11 @@ class Mysql_Conexion {
                     }
                     var_dump($array);
                     if ($array == NULL) {
-                        echo 'entro NULL <br>';
+       
                         $this->error = TRUE;
                         $this->message = "nulo";
                     } else {
-                         echo 'entro NO NULL <br>';
+                  
                         $this->error = FALSE;
                         $this->message = "Ok!";
                     }

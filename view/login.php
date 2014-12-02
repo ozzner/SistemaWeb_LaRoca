@@ -7,7 +7,7 @@ $mensaje = $_REQUEST["message"];
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/css_general.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/css_general.css" rel="stylesheet" type="text/css"/>
         <title>Login</title>
     </head>
     <body>
@@ -17,7 +17,7 @@ $mensaje = $_REQUEST["message"];
         
         <section id="main_login">
             <div>Esto es un encabezado</div>
-            <form id="form_login" method="post" action="../util/util_autenticacion.php">
+            <form id="form_login" method="post" action="../handler/handler_autenticacion.php">
                 <h1>Inicia sesión con tu usuario y contraseña</h1>
                 <div class="controles_form">
                     <input type="text" placeholder="Usuario" name="usuario"/><br>

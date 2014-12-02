@@ -23,14 +23,18 @@ if (!empty($contraseña) and !empty($usuario)) {
          $data = $acceso->getAllDataUser($usuarioID);
          $oProfesor = new ProfesorModel();
          
-         $oProfesor->setCelular($data[0]["nombres"]);
+         $oProfesor->setCelular($data[0]["celular"]);
          $oProfesor->setProfesorID($data[0]["profesorID"]);
          $oProfesor->setGrupoID($data[0]["grupoID"]);
+         $oProfesor->setNombres($data[0]["nombres"]);
+//         var_dump($oProfesor);
          
          $oSession = new SesionHandler("profesor");
-         $oSession->storeMySession($oProfesor);
+//         var_dump($oSession);
          
-         header("Location: ../view/view_cpanel.php?usuarioID=$userID");
+         $oSession->storeMySession($oProfesor);
+      
+         header("Location: ../view/view_cpanel.php");
     }  
     
 } else {

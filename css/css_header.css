@@ -1,0 +1,59 @@
+
+/* 
+    Created on : 02/12/2014, 04:17:19 PM
+    Author     : Renzo Santillán
+*/
+
+header{
+    height: 55px;
+    width: 1364px;
+    border: solid 1px gray;
+}
+
+#content_clock,#content_logut,#content_bienvenida{
+    /*background: red;*/
+    height: 55px;
+    width: 450px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+#content_bienvenida{
+    width: 764px;
+    float: left;
+}
+
+#bienvenida_content_logo{
+    height: 55px;
+    width:150px;
+    float: left;
+    margin-left: 30px;
+}
+
+#content_clock {
+    width: 400px;
+}
+
+#content_clock label{
+    top: 10px;
+    position: relative;
+}
+
+#content_logut{
+    width: 200px;
+    /*background: green;*/
+    float: right;
+}
+#session{
+    position: relative;
+    top:11px;
+    width: 150px;
+    height: 30px;
+}
+
+#clock{
+    top:7.5px;
+    position: relative;
+    /*background: yellow;*/
+    
+}

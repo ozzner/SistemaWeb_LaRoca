@@ -66,7 +66,7 @@ class AccesoController {
 
             $data = $this->conexion->setQuery(utf8_decode($query));
             $error = $this->conexion->getError();
-            var_dump($error);
+     
             if ($error) {
                 $this->message = "¡Usuario y/o contraseña incorrecta!";
                 return FALSE;
