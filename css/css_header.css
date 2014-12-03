@@ -37,10 +37,18 @@ header{
 }
 
 #content_clock label{
-    top: 10px;
+    top: 8px;
     position: relative;
 }
 
+#clock{
+
+    position: relative;
+    font-size: 15px;
+    
+    /*background: yellow;*/
+    
+}
 #content_logut{
     width: 200px;
     /*background: green;*/
@@ -53,9 +61,3 @@ header{
     height: 30px;
 }
 
-#clock{
-    top:7.5px;
-    position: relative;
-    /*background: yellow;*/
-    
-}
