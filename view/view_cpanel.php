@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
+
+error_reporting(E_ALL ^ E_NOTICE);
 /* * *** Includes **** */
+include_once './admin_content.php';
 include_once '../handler/handler_sesiones.php';
 include_once '../model/model_profesor.php';
 include_once './../handler/handler_sesiones.php';
@@ -21,11 +24,19 @@ if (!$active) {
         <script src="../js/js_my_functions.js" type="text/javascript"></script>
         <link href="../css/css_general.css" rel="stylesheet" type="text/css"/>
         <link href="../css/css_header.css" rel="stylesheet" type="text/css"/>
+         <link href="../css/css_header.css" rel="stylesheet" type="text/css"/>
+         
+           <!-- Bootstrap Core CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+              <!-- Custom CSS -->
+        <link href="../css/simple-sidebar.css" rel="stylesheet">
+        <script src="../js/jquery.min.js" type="text/javascript"></script>
+        
         <title>La Roca system</title>
     </head>
     <body onload="startTime()">
 
-
+  
         <header>
             <div id="content_bienvenida">
                 <div id="bienvenida_content_logo"><img src="../img/logo.gif"/></div>
@@ -54,18 +65,83 @@ if (!$active) {
 
         
         <div class="display">
-            <!--    <div class="swipe-area"></div>
-                    <a href="#" data-toggle=".container" id="sidebar-toggle">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </a>
-                    <div class="content">
-                        <h1>Creando un menu swipeable para navegadores web y moviles</h1>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    </div>
-                </div>-->
-            <?php include_once 'menu.php'; ?>
+            
+        <script>
+            $(document).ready(function() {
+
+                $("#opcion1").click(function() {
+                    $("#gestion_usuario").show();
+                });
+
+                $("#opcion2").click(function() {
+                    $("#gestion_usuario").hide();
+                });
+            });
+        </script>
+        
+
+
+
+        <div id="page-content-wrapper" class="MyMenu">
+            <a href="#sidebar-toggle" id="sidebar-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+
+            <div class="sub_menu" id="gestion_usuario">
+                <ul class="nav_list">
+                    <li>
+                        <a href="#">Alumno</a>
+                    </li>
+                    <li>
+                        <a href="#">Profesor</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+
+                    <li>
+                        <a id="opcion1" href="?execute=opcion1">Gestión de usuarios</a>
+                    </li>
+                    <li>
+                        <a  id="opcion2" href="#">Iniciar clase</a>
+                    </li>
+                    <li>
+                        <a href="#">Enseñanzas</a>
+                    </li>
+                    <li>
+                        <a href="#">Análisis y búsqueda</a>
+                    </li>
+                    <li>
+                        <a href="#">Generar reportes</a>
+                    </li>
+                    <li>
+                        <a href="#">Ministerios la roca</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- /#sidebar-wrapper -->
+
+            <!-- Page Content -->
+
+
+            <div id="page-content-wrapper">
+                <?php include ($contenido); ?>
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+           
+        
         </div>
         <!-- jQuery -->
         <script src="../js/jquery.js"></script>
