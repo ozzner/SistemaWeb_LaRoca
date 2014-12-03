@@ -4,6 +4,7 @@
     Author     : Renzo Santillán
 */
 
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow|Volkhov:400italic,700);
 
 @font-face {
     font-family: 'ubuntu_monoregular';
@@ -55,7 +56,6 @@
          url('../font/junction-webfont.svg#junction_regularregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 
@@ -63,8 +63,8 @@
 *{
     padding: 0px;
     margin: 0px;
-    font-size: 16px;
-    font-family: 'linux_biolinum_oregular'
+    font-size: 17px;
+    font-family: 'PT Sans Narrow';;
 }
 
 
@@ -76,3 +76,26 @@ img,video {
     max-width: 100%;
 }
 
+#sidebar-wrapper .sidebar-nav li a{
+  font-family: 'PT Sans Narrow';
+  font-size: 17px;
+ 
+}
+/*General nav list*/
+.nav_list ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav_list li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;  
+}
+
+.nav_list li a {
+   text-decoration: none;
+   padding: 4px 2em;
+   /*background: black;*/
+}

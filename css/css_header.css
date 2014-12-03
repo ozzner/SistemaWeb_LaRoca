@@ -5,9 +5,11 @@
 */
 
 header{
-    height: 55px;
-    width: 1364px;
-    border: solid 1px gray;
+   background: rgba(34,144,201,0.9);
+    height: 57px;
+    width: 1366px;
+    border-bottom: solid 1px whitesmoke;
+    color:white;
 }
 
 #content_clock,#content_logut,#content_bienvenida{
@@ -19,7 +21,7 @@ header{
     text-align: center;
 }
 #content_bienvenida{
-    width: 764px;
+    width: 760px;
     float: left;
 }
 
