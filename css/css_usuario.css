@@ -41,6 +41,12 @@
     /*background: red;*/
       
 }
+#alumno_content{
+/*    background: red;*/
+    height: 300px;
+    max-height: 320px;
+    min-height: 280px;
+}
 
 
 /******* HOVERS - EFECTS ********/
@@ -74,4 +80,16 @@
 .v_separador,.agrupar ,.MyRadioGroup{
     display: inline-block;
     vertical-align: top;
+}
+
+#list{
+    height: 200px !important;
+    width: 100px !important;
+    background: red;
+}
+
+#btnGrabarAlumno{
+    width:200px;
+    margin-left: 20px;
+  
 }

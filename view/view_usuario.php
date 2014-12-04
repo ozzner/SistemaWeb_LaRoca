@@ -1,3 +1,11 @@
+<?php
+include_once './../controller/controller_distrito.php';
+$oDistrito = new DistritoController();
+$distritos = $oDistrito->getAllData();
+
+//var_dump($distritos);
+?>
+
 <link href="../css/css_usuario.css" rel="stylesheet" type="text/css"/>
 <div id="content_usuario_main" class="MyContents">
 
@@ -20,10 +28,10 @@
         <div class="separador"></div>
     </div>
 
-    <br><br>
+    <br>
     <form method="post">
 
-        <div role="tabpanel">
+        <div role="tabpanel" id="alumno_content">
 
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
@@ -75,26 +83,42 @@
                     <fieldset>
                         <legend>Ubicación del alumno</legend>
                         <div class="agrupar">
-                            <input class="MyInput" type="datetime" placeholder="Nombre de madre" data-toggle="tooltip" data-placement="top" title="Ingrese nombre de mamá"/><br>
+                            <select class="MyDropdown" onclick="display_usgs_change()" data-toggle="tooltip" data-placement="top" title="Grupo al que pertenece">
+                               <option value="-1"></option>
+                                <option value="perfil">Joyas preciosas</option>
+                                <option value="salir" >Jovenes José</option>
+                            </select>
                         </div>
                         <div class="agrupar">
-                            <input class="MyInput" type="number" placeholder="993297151" data-toggle="tooltip" data-placement="bottom" title="Celular de referencia de papá o mamá en caso de emergencia"/><br>
+                            <select class="MyDropdown" data-toggle="tooltip" data-placement="top" title="¿En qué distrito vive?">
+                               <option value="-1"></option>
+                                 <?php foreach ($distritos as $key => $value) {?>
+                                <option value="<?php echo $value['distritoID']; ?>"><?php echo $value['nombre']; ?></option>
+                                  <?php  }?>
+
+                            </select>
                         </div>
                         <div class="agrupar">
-                            <input class="MyInput" type="text" placeholder="Ingrese dirección" data-toggle="tooltip" data-placement="bottom" title="Jr. Marañon 699 - Urb. José Galvez"/><br>
+                            <input class="MyInput" style="width: 300px;" type="text" placeholder="Ingrese dirección" data-toggle="tooltip" data-placement="bottom" title="Jr. Marañon 699 - Urb. José Galvez"/><br>
                         </div>
                     </fieldset>
 
                 </div>
-                <div role="tabpanel" class="tab-pane" id="foto">...</div>
+                <div role="tabpanel" class="tab-pane" id="foto">
+
+
+
+                </div>
             </div>
 
         </div>
+
         <script>
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip()
             })
         </script>
+        <button class="MyButton" id="btnGrabarAlumno" type="submit">Grabar</button>
     </form>
 
 

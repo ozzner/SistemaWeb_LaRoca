@@ -155,7 +155,7 @@ h1,h2,h3,h4,h5,#clock{
 
 
 /************* GENERAL INPUTS ***************/
-.MyInput{
+.MyInput, .MyDropdown{
     height: 40px;
     width: 200px;
     border:solid 2px #ddd;
@@ -166,10 +166,9 @@ h1,h2,h3,h4,h5,#clock{
 
 .MyInput:input{
     border:solid 2px #ccc !important;
-    color:red !important;
 }
 
-.MyInput:focus{
+.MyInput:focus,.MyDropdown:focus{
     outline: #ccc !important;
     color:blue;
     background: rgba(34,144,201,0.1) !important;
@@ -181,6 +180,39 @@ h1,h2,h3,h4,h5,#clock{
     width: 90px;
 }
 
+.MyButton{
+
+    background: #02a902;
+    color: whitesmoke;
+    height: 35px;
+    width: 130px;
+    padding: 5px;
+    border:solid 1px #02a902;
+    text-decoration: none;
+
+    font-size: 17px;
+
+    -webkit-transition:all .2s ease;  
+    -o-transition:all .2s ease;   
+    -moz-transition:all .2s ease;   
+    -ms-transition:all .2s ease;   
+    transition:all .2s ease;   
+}
+
+.MyButton:active{
+    margin-top: 1px;
+    border-bottom:solid 1px #00cd00;
+}
+
+.MyButton:hover{
+    background:#058705;
+    border:solid 1px #058705;
+  
+}
+
+.MyButton:enabled{
+    outline: none !important;
+}
 
 /************* GENERAL COMODINES ***************/
 .v_separador{

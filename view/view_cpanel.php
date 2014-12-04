@@ -7,13 +7,19 @@ include_once '../handler/handler_sesiones.php';
 include_once '../model/model_profesor.php';
 include_once './../handler/handler_sesiones.php';
 
+
 $session = new SesionHandler("profesor");
+
+
 $active = $session->isActiveSession();
 
 if (!$active) {
     header("Location: index.php?message=sessión expirada");
     exit();
 }
+
+
+
 ?>
 
 <html>

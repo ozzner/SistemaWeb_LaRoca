@@ -46,7 +46,7 @@ class Mysql_Conexion {
                     while ($row = $r->fetch_assoc()) {
                         $array[] = $row;
                     }
-                    var_dump($array);
+//                    var_dump($array);
                     if ($array == NULL) {
        
                         $this->error = TRUE;
