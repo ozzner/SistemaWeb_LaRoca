@@ -5,7 +5,7 @@ function startTime() {
     var m = today.getMinutes();
     var s = today.getSeconds();
     var dia = today.getDay();
-    var mes = today.getMonth()+1;
+    var mes = today.getMonth() + 1;
     var año = today.getFullYear();
 
     switch (mes) {
@@ -50,7 +50,7 @@ function startTime() {
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('clock').innerHTML = dia + "-" + mes + "-" + año + "  " + h + ":" + m + ":" + s;
-    var t = setTimeout(function() {
+    var t = setTimeout(function () {
         startTime()
     }, 500);
 }
@@ -63,10 +63,11 @@ function checkTime(i) {
     return i;
 }
 
- function display_usgs_change() {
-  var valor = event.target.value;
-    if (valor == "salir"){
+function display_usgs_change() {
+    var valor = event.target.value;
+    if (valor == "salir") {
         window.location.href = 'logout.php';
     }
 }
+
 

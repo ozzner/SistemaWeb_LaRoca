@@ -3,7 +3,75 @@
     Author     : Renzo Santillán
 */
 
-#content_usuario_main{
-    margin-left: 20px;
-    background: lawngreen;
+#control_alumno .nav_list {
+    background: transparent;
+    height: 38px;
+    width: 350px;
+    text-align: center;
+    border-radius: 1em;
+    margin-bottom: 0px;
+}
+.separador{
+        background: rgba(205,96,144,1);
+        height: 1px;
+        border-radius: 1px;
+}
+#control_alumno .nav_list li a {
+    padding: 0.2em 1.8em;
+    border-radius: 0.2em;
+    background: rgba(205,96,144,1);
+    color:white;
+    text-shadow: 2px 2px 3px #CD6090;
+    padding:6px 28px;
+    position: relative;
+    top:6px;
+
+/*   box-shadow: inset 0px 0px 40px #f00,
+                    0px 0px 40px #ff0;*/
+                    
+    -webkit-transition:all .5s ease-out;  /* Chrome y Safari */
+    -o-transition:all .5s ease-out;  /* Opera */
+    -moz-transition:all .5s ease-out;  /* Mozilla Firefox */
+    -ms-transition:all .5s ease-out;   /* Internet Explorer */
+    transition:all .5s ease-out;  /* W3C */
+}
+
+
+#control_alumno .nav_list li {
+    /*background: red;*/
+      
+}
+
+
+/******* HOVERS - EFECTS ********/
+#control_alumno .nav_list li a:hover {
+     background: #8b0a50;
+}
+
+#content_usuario_main .MyHeader{
+    text-align: left;
+}
+
+.MyHeader h3{
+    top:9px;
+    position: relative;
+    margin-left: 10px;
+    color:#CD6090;
+    /*background: red;*/
+}
+
+
+#tabContentID{
+/*    background: blue;*/
+    padding: 20px;
+}
+
+#tabContentID span{
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+.v_separador,.agrupar ,.MyRadioGroup{
+    display: inline-block;
+    vertical-align: top;
 }

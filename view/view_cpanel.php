@@ -31,14 +31,13 @@ if (!$active) {
         <link href="../css/simple-sidebar.css" rel="stylesheet">
         <script src="../vendor/jquery-2.1.1/jquery-2.1.1.min.js" type="text/javascript"></script>
 
-        <title>La Roca system</title>
+        <title><?php echo $titulo;?></title>
     </head>
     <body onload="startTime()">
 
-
         <header>
             <div id="content_bienvenida">
-                <div id="bienvenida_content_logo"><img src="../resources/img/logo.gif"/></div>
+                <div id="bienvenida_content_logo"><a  href="?execute=opcion0"><img src="../resources/img/logo.png"/></a></div>
             </div>
 
             <div id="content_clock">
@@ -65,24 +64,8 @@ if (!$active) {
 
         <div class="display">
 
-            <script>
-                $(document).ready(function () {
-
-                    $("#opcion1").click(function () {
-                        $("#gestion_usuario").show();
-                    });
-
-                    $("#opcion2").click(function () {
-                        $("#gestion_usuario").hide();
-                    });
-                });
-            </script>
-
-
-
-
             <div id="page-content-wrapper" class="MyMenu">
-                
+
                 <div id="menu_icon">
                     <a href="#sidebar-toggle" id="sidebar-toggle">
                         <span class="bar"></span>
@@ -91,32 +74,26 @@ if (!$active) {
                     </a>
                 </div>
 
-                <div id="gestion_usuario">
-                    
-                    <ul class="nav_list">
-                        <li>
-                            <a href="#">Alumno</a>
-                        </li>
-                        <li>
-                            <a href="#">Profesor</a>
-                        </li>
-                    </ul>
-                    
+
+                <!--INICIO-->
+                <div  class="sub_menu">
+                    <?php include ($submenu);?>
                 </div>
-                
+
             </div>
 
             <div id="wrapper">
 
-
                 <div id="sidebar-wrapper">
                     <ul class="sidebar-nav">
-
+                        <li>
+                            <a id="opcion0" href="?execute=opcion0">Inicio</a>
+                        </li>
                         <li>
                             <a id="opcion1" href="?execute=opcion1">Gestión de usuarios</a>
                         </li>
                         <li>
-                            <a  id="opcion2" href="#">Iniciar clase</a>
+                            <a id="opcion2" href="?execute=opcion2">Iniciar clase</a>
                         </li>
                         <li>
                             <a href="#">Enseñanzas</a>
@@ -153,11 +130,12 @@ if (!$active) {
 
         <!-- Menu Toggle Script -->
         <script>
-                $("#sidebar-toggle").click(function (e) {
-                    e.preventDefault();
-                    $("#wrapper").toggleClass("toggled");
-                });
+                    $("#sidebar-toggle").click(function (e) {
+                        e.preventDefault();
+                        $("#wrapper").toggleClass("toggled");
+                    });
         </script>
+
 
     </body>
 </html>

@@ -1,3 +1,4 @@
+
 /*!
  * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -12,7 +13,7 @@
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    background: red;
+    /*background: red;*/
 }
 
 #wrapper.toggled {
@@ -23,8 +24,8 @@
     z-index: 1000;
     position: fixed;
     left: 200px;
-    width: 0;
-    height: 100%;
+    /*    width: 0;*/
+    height: 800px !important;
     margin-left: -200px;
     overflow-y: auto;
     background: #2290c9;
@@ -68,6 +69,12 @@
     display: block;
     text-decoration: none;
     color: #fff;
+
+    -webkit-transition:all .15s linear;  /* Chrome y Safari */
+    -o-transition:all .15s linear;  /* Opera */
+    -moz-transition:all .15s linear;  /* Mozilla Firefox */
+    -ms-transition:all .15s linear;   /* Internet Explorer */
+    transition:all .15s linear;  /* W3C */
 }
 
 .sidebar-nav li a:hover {
@@ -81,12 +88,12 @@
 .sidebar-nav li a:focus {
     text-decoration: none;
 }
-/*
+
 .sidebar-nav > .sidebar-brand {
     height: 65px;
     font-size: 18px;
     line-height: 60px;
-}*/
+}
 
 .sidebar-nav > .sidebar-brand a {
     color: #999999;
@@ -109,20 +116,18 @@
     #sidebar-wrapper {
         width: 165px;
     }
-
     #wrapper.toggled #sidebar-wrapper {
         width: 0;
     }
-
-    /*    #page-content-wrapper {
-    
-        }*/
     /*
-        #wrapper.toggled #page-content-wrapper {
-            position: relative;
-            margin-right: 0;
+        #page-content-wrapper {
+            padding: 15px;
         }*/
 
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
 
 }
 
@@ -133,11 +138,11 @@
 }
 
 #menu_icon{
-    background: yellow;
+    /*background: yellow;*/
     height: 30px;
 }
 
-#gestion_usuario{
+/*#gestion_usuario{
     background: yellow;
     float: right;
     height: 30px;
@@ -148,7 +153,7 @@
 #gestion_usuario,#menu_icon{
     display: inline-block;
     vertical-align: top;
-}
+}*/
 
 #sidebar-toggle {
 
@@ -174,12 +179,7 @@
     margin-bottom: 0;   
 }
 
-.nav_list{
-    background: #B9B9B9;
-    height: 100%;
-    width: 100%;
-    padding: 2px;
-}
+
 
 /*    .display{
         padding: 20px;

@@ -5,10 +5,10 @@
 */
 
 header{
-   background: rgba(34,144,201,0.9);
+   background: rgba(34,144,201,1);
     height: 57px;
     width: 1366px;
-    border-bottom: solid 1px whitesmoke;
+    /*border-bottom: solid 1px whitesmoke;*/
     color:white;
 }
 
@@ -29,7 +29,11 @@ header{
     height: 55px;
     width:150px;
     float: left;
-    margin-left: 30px;
+    margin-left: 10px;
+}
+#bienvenida_content_logo img{
+    /*max-height: 100%;*/
+    max-width: 100%;
 }
 
 #content_clock {
@@ -54,10 +58,17 @@ header{
     /*background: green;*/
     float: right;
 }
+
 #session{
     position: relative;
-    top:11px;
-    width: 150px;
+    top:12px;
+    width: 120px;
     height: 30px;
+    color:#2290c9;
+    font-size: 16px;
+}
+
+#session option{
+   
 }
 
