@@ -34,7 +34,7 @@ if (!empty($contraseña) and !empty($usuario)) {
          
          $oSession->storeMySession($oProfesor);
       
-         header("Location: ../view/view_cpanel.php");
+         header("Location: ../view/view_cpanel.php?execute=opcion0");
     }  
     
 } else {

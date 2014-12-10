@@ -7,7 +7,6 @@ $mensaje = $_REQUEST["message"];
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../css/css_general.css" rel="stylesheet" type="text/css"/>
         <title>Login</title>
     </head>
     <body>
@@ -32,17 +31,5 @@ $mensaje = $_REQUEST["message"];
             
         </section>
         
-        
-        <?php
-     
-//        
-//            include_once './database/database_mysql.php';
-//            
-//            $conexion  = new Mysql_Conexion();
-//            $conexion->startConnection();
-//            echo 'Estado: ' . $conexion->getError() . "<br>";
-//            echo 'Mensaje: ' . $conexion->getMessage() . "<br>";
-            
-        ?>
     </body>
 </html>

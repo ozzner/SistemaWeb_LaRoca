@@ -9,17 +9,12 @@ include_once './../handler/handler_sesiones.php';
 
 
 $session = new SesionHandler("profesor");
-
-
 $active = $session->isActiveSession();
 
 if (!$active) {
     header("Location: index.php?message=sessión expirada");
     exit();
 }
-
-
-
 ?>
 
 <html>
@@ -29,15 +24,15 @@ if (!$active) {
         <script src="../js/js_my_functions.js" type="text/javascript"></script>
         <link href="../css/css_general.css" rel="stylesheet" type="text/css"/>
         <link href="../css/css_header.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/css_header.css" rel="stylesheet" type="text/css"/>
 
         <!-- Bootstrap Core CSS -->
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
+<!--        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>-->
         <!-- Custom CSS -->
         <link href="../css/simple-sidebar.css" rel="stylesheet">
-        <script src="../vendor/jquery-2.1.1/jquery-2.1.1.min.js" type="text/javascript"></script>
-
-        <title><?php echo $titulo;?></title>
+        <!--<script src="../vendor/jquery-2.1.1/jquery-2.1.1.min.js" type="text/javascript"></script>-->
+        <script src="../vendor/DataTable/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <title><?php echo $titulo; ?></title>
     </head>
     <body onload="startTime()">
 
@@ -52,7 +47,7 @@ if (!$active) {
                 $cod = $_SESSION["profesor"]->getProfesorID();
                 ?>
                 <label id="profesorID"><?php echo "$name - Cod[00$cod]"; ?></label><br>
-                <span id="clock"></span>
+                <span id="reloj"></span>
             </div>
 
             <div id="content_logut">
@@ -83,7 +78,7 @@ if (!$active) {
 
                 <!--INICIO-->
                 <div  class="sub_menu">
-                    <?php include ($submenu);?>
+                    <?php include ($submenu); ?>
                 </div>
 
             </div>
@@ -128,18 +123,25 @@ if (!$active) {
 
 
         </div>
-        <!-- jQuery -->
-        <script src="../js/jquery.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../js/bootstrap.min.js"></script>
+
 
         <!-- Menu Toggle Script -->
-        <script>
-                    $("#sidebar-toggle").click(function (e) {
-                        e.preventDefault();
-                        $("#wrapper").toggleClass("toggled");
+
+<!--        <script src="../vendor/dataTables-1.10.4/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        <script src="../vendor/dataTables-1.10.4/js/jquery.dataTables.min.js" type="text/javascript"></script>-->
+
+<!--        <script>
+                    $(document).ready(function () {
+                        $('#example').dataTable();
                     });
+        </script>-->
+
+        <script>
+            $("#sidebar-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
         </script>
 
 

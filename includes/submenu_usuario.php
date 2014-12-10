@@ -6,13 +6,16 @@
         <title></title>
     </head>
     <body>
-        <ul class="nav_list" id="gestion_usuario">
-            <li>
-                <a href="#">Alumno</a>
-            </li>
-            <li>
-                <a href="#">Profesor</a>
-            </li>
-        </ul>
+        <div id="submenu_usuario_content">
+            <ul class="nav_list" id="gestion_usuario">
+                <li>
+                    <a href="#">Alumno</a>
+                </li>
+                <li>
+                    <a href="#">Profesor</a>
+                </li>
+            </ul>
+        </div>
+
     </body>
 </html>

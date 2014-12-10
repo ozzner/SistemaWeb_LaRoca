@@ -79,8 +79,9 @@ img,video {
     font-weight: normal;
 }
 
-h1,h2,h3,h4,h5,#clock{
+h1,h2,h3,h4,h5,#reloj{
     font-family: 'ubuntu_monoregular';
+    color:#CD6090;
 }
 
 #sidebar-wrapper .sidebar-nav li a{
@@ -90,10 +91,13 @@ h1,h2,h3,h4,h5,#clock{
 }
 /************* GENERAL NAV LIST ***************/
 .nav_list{
-    background: rgba(34,144,201,0.2);
+    /*background: rgba(34,144,201,1);*/
+    /*background: whitesmoke;*/
     height: 100%;
+    background:#888;
     width: 100%;
     padding: 2px;
+
 }
 
 .nav_list ul{
@@ -106,12 +110,24 @@ h1,h2,h3,h4,h5,#clock{
     display: inline;
     list-style-type: none;
     padding-right: 10px;  
+
 }
 
 .nav_list li a {
+
     text-decoration: none;
     padding: 0.2em 2.5em;
-    background: black;
+    background: white;
+
+    -webkit-transition:all .5s ease;  
+    -o-transition:all .5s ease;   
+    -moz-transition:all .5s ease;   
+    -ms-transition:all .5s ease;   
+    transition:all .5s ease; 
+}
+
+.nav_list li a:hover{
+    background: #ccc;
 }
 
 /************* GENERAL CONTENTS ***************/
@@ -124,7 +140,7 @@ h1,h2,h3,h4,h5,#clock{
 
 }
 .sub_menu{
-    /*background: yellow;*/
+    background: #ddd;
     float: right;
     height: 30px;
     width:1201px;
@@ -138,10 +154,11 @@ h1,h2,h3,h4,h5,#clock{
 }
 
 .MyHeader{
-    /*background: orangered;*/
-    margin-top: -20px;
-    height: 50px;
-    text-align: center;
+    /*    background: orangered;
+        margin-top: -20px;
+        height: 20px;
+        text-align: center;*/
+
 }
 
 .MyRadioGroup{
@@ -171,7 +188,8 @@ h1,h2,h3,h4,h5,#clock{
 .MyInput:focus,.MyDropdown:focus{
     outline: #ccc !important;
     color:blue;
-    background: rgba(34,144,201,0.1) !important;
+    background: rgba(221,221,221,0.3) !important;
+    border:solid 2px #ccc !important;
 }
 
 .MyInputRadio{
@@ -187,9 +205,10 @@ h1,h2,h3,h4,h5,#clock{
     height: 35px;
     width: 130px;
     padding: 5px;
-    border:solid 1px #02a902;
+    border:solid 1px #058705;
+    border-bottom: solid 3px #058705;
     text-decoration: none;
-
+    border-radius: 2px;
     font-size: 17px;
 
     -webkit-transition:all .2s ease;  
@@ -200,17 +219,20 @@ h1,h2,h3,h4,h5,#clock{
 }
 
 .MyButton:active{
+    border-radius: 2px;
     margin-top: 1px;
     border-bottom:solid 1px #00cd00;
 }
 
 .MyButton:hover{
+    border-radius: 2px;
     background:#058705;
     border:solid 1px #058705;
-  
+    border-bottom: solid 3px #058705;
 }
 
 .MyButton:enabled{
+    border-radius: 2px;
     outline: none !important;
 }
 
@@ -221,4 +243,65 @@ h1,h2,h3,h4,h5,#clock{
     background: #ddd;
     margin-left: 50px;
     margin-right: 50px;
+}
+
+#message_usuario{
+    /*color: red;*/
+    border-radius: 1em;
+    margin-left: 20px;
+}
+
+
+input:required {
+    border: 2px solid rgba(255,0,0,0.3) !important;
+}
+
+input:valid {
+    border:solid 2px #ccc !important;
+}
+
+input:invalid {
+    border: 2px solid blue;
+}
+
+/************* GENERAL MESSAGES ***************/
+
+.MyInfo, .MySuccess, .MyWarning, .MyError, .MyValidation {
+    /*border: 1px solid;*/
+    margin: 10px 0px;
+    padding: 9px 20px 9px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 22px 22px;
+}
+
+
+.MyInfo {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('../resources/img/information.png');
+}
+
+.MySuccess {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image: url('../resources/img/done.png');
+}
+
+.MyWarning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('../resources/img/warning.png');
+}
+
+.MyError{
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('../resources/img/error.png');
+}
+
+.MyValidation{
+    color: #D63301;
+    background-color: #FFCCBA;
+    background-image: url('img/validation.png');
 }

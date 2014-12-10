@@ -22,6 +22,9 @@ if (isset($exe)) {
             $contenido = "view_iniciar_clase.php";
             $submenu = "../includes/submenu_default.php";
             break;
+        default :
+            $contenido = "view_inicio.php";
+            $submenu = "../includes/submenu_default.php";
     }
 } else {
     $titulo = "Inicio";

@@ -5,7 +5,8 @@
 */
 
 header{
-   background: rgba(34,144,201,1);
+   /*background: rgba(34,144,201,1);*/
+   background:#888;
     height: 57px;
     width: 1366px;
     /*border-bottom: solid 1px whitesmoke;*/
@@ -45,11 +46,11 @@ header{
     position: relative;
 }
 
-#clock{
+#reloj{
 
     position: relative;
     font-size: 15px;
-    
+    color:white !important;
     /*background: yellow;*/
     
 }

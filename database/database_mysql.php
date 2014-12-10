@@ -6,12 +6,13 @@ class Mysql_Conexion {
 
     private static $connection;
     private $message;
-    private $error;
+    private $isError;
+    private $errorCode;
 
     function __construct() {
 
         require_once dirname(__FILE__) . './database_configurations.php';
-        $this->error = NULL;
+        $this->isError = NULL;
         $this->message = NULL;
     }
 
@@ -21,18 +22,21 @@ class Mysql_Conexion {
             Mysql_Conexion::$connection = new mysqli(MySQL_DB_HOST, MySQL_DB_USER, MySQL_DB_PASS, MySQL_DB_NAME);
 
             if (Mysql_Conexion::$connection->connect_errno) {
-
-                $this->error = TRUE;
+                $this->errorCode = mysqli_errno(Mysql_Conexion::$connection);
+                $this->isError = TRUE;
                 $this->message = "Se presento el siguiente error. " . mysqli_connect_error();
             } else {
-
-                $this->error = FALSE;
+                $this->isError = FALSE;
                 $this->message = "¡Conexión exitosa!";
             }
+            
         } catch (Exception $exc) {
-            $this->error = TRUE;
+            throw  $exc;
+            $this->isError = TRUE;
             $this->message = $exc->getMessage();
         }
+        
+         return  Mysql_Conexion::$connection;
     }
 
     
@@ -48,26 +52,24 @@ class Mysql_Conexion {
                     }
 //                    var_dump($array);
                     if ($array == NULL) {
-       
-                        $this->error = TRUE;
+                        $this->isError = TRUE;
                         $this->message = "nulo";
                     } else {
                   
-                        $this->error = FALSE;
+                        $this->isError = FALSE;
                         $this->message = "Ok!";
                     }
 
                     $r->free();
-                    ;
+                    
                 } else {
-                    echo ' ERROR LECTURA <br>';
                     $this->messaje = 'Error en lectura de datos <br>';
-                    $this->error = TRUE;
+                    $this->isError = TRUE;
                 }
             }
         } catch (Exception $ex) {
 
-            $this->error = TRUE;
+            $this->isError = TRUE;
             $this->message = "Error. " . $ex->getMessage();
             $array = NULL;
         }
@@ -87,10 +89,13 @@ class Mysql_Conexion {
     }
 
     public function getError() {
-        return $this->error;
+        return $this->isError;
+    }
+    function getErrorCode() {
+        return $this->errorCode;
     }
 
-    public function getConnection() {
+        public function getConnection() {
         return Mysql_Conexion::$connection;
     }
 

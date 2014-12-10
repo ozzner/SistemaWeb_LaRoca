@@ -4,7 +4,7 @@ function startTime() {
     var h = today.getHours();
     var m = today.getMinutes();
     var s = today.getSeconds();
-    var dia = today.getDay();
+    var dia = today.getUTCDay();
     var mes = today.getMonth() + 1;
     var año = today.getFullYear();
 
@@ -49,7 +49,7 @@ function startTime() {
 
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('clock').innerHTML = dia + "-" + mes + "-" + año + "  " + h + ":" + m + ":" + s;
+    document.getElementById('reloj').innerHTML = (dia+7)  + "-" + mes + "-" + año + "  " + h + ":" + m + ":" + s;
     var t = setTimeout(function () {
         startTime()
     }, 500);

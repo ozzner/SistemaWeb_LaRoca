@@ -2,20 +2,28 @@
     Created on : 03/12/2014, 08:28:50 AM
     Author     : Renzo Santillán
 */
+#control_alumno{
+    /*background:red;*/ 
+    text-align: center;
+    margin-top: 15px;
+}
+
 
 #control_alumno .nav_list {
     background: transparent;
     height: 38px;
     width: 350px;
-    text-align: center;
     border-radius: 1em;
-    margin-bottom: 0px;
+    margin-bottom: -5px;
+    margin-left: -1px;
 }
+
 .separador{
-        background: rgba(205,96,144,1);
-        height: 1px;
-        border-radius: 1px;
+    background: rgba(205,96,144,1);
+    height: 1px;
+    border-radius: 1px;
 }
+
 #control_alumno .nav_list li a {
     padding: 0.2em 1.8em;
     border-radius: 0.2em;
@@ -25,10 +33,9 @@
     padding:6px 28px;
     position: relative;
     top:6px;
+    /*   box-shadow: inset 0px 0px 40px #f00,
+                        0px 0px 40px #ff0;*/
 
-/*   box-shadow: inset 0px 0px 40px #f00,
-                    0px 0px 40px #ff0;*/
-                    
     -webkit-transition:all .5s ease-out;  /* Chrome y Safari */
     -o-transition:all .5s ease-out;  /* Opera */
     -moz-transition:all .5s ease-out;  /* Mozilla Firefox */
@@ -37,12 +44,8 @@
 }
 
 
-#control_alumno .nav_list li {
-    /*background: red;*/
-      
-}
 #alumno_content{
-/*    background: red;*/
+    /*    background: red;*/
     height: 300px;
     max-height: 320px;
     min-height: 280px;
@@ -51,24 +54,50 @@
 
 /******* HOVERS - EFECTS ********/
 #control_alumno .nav_list li a:hover {
-     background: #8b0a50;
+    background: #8b0a50;
 }
 
-#content_usuario_main .MyHeader{
+#submenu_usuario_content{
+    background: whitesmoke;
+    height: 80px;
+    width: auto;
+
+    /*padding: 10px;*/
+}
+
+#gestion_usuario {
+    background: #888;
+    width: 271px;
+        /*border-top-right-radius: 2em;*/
+        border-bottom-right-radius: 3em;
+}
+
+#gestion_usuario li a{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top:4px;
+    border-bottom: solid 4px white;
+    margin-left: -1.8px;
+}
+
+
+
+/*#content_usuario_main .MyHeader{
     text-align: left;
 }
 
-.MyHeader h3{
+.MyHeader #titulo{
     top:9px;
     position: relative;
     margin-left: 10px;
     color:#CD6090;
-    /*background: red;*/
-}
+    color:#888;
+    background: red;
+}*/
 
 
 #tabContentID{
-/*    background: blue;*/
+    /*    background: blue;*/
     padding: 20px;
 }
 
@@ -91,5 +120,35 @@
 #btnGrabarAlumno{
     width:200px;
     margin-left: 20px;
-  
+
+}
+
+#foto_subir,#foto_restricciones{
+    display: inline-block;
+    vertical-align:top;
+
+}
+#foto_subir{
+    max-width: 500px;
+    width: 450px !important;
+    /*background: blue;*/
+    margin-left: 200px;
+    padding: 0px;
+    margin-top: -20px;
+}
+
+#foto_restricciones{
+    /*background:red;*/
+    padding: 5px;
+    margin-left:5px;
+    margin-right: 19px;
+}
+#foto_restricciones h2{
+    margin-left: -20px;
+    margin-top: -5px;
+    margin-bottom: 19px;
+}
+
+#imagen{
+    width: 200px !important;
 }
