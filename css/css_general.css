@@ -193,9 +193,8 @@ h1,h2,h3,h4,h5,#reloj{
 }
 
 .MyInputRadio{
-    padding: 10px;
-    height: 20px;
-    width: 90px;
+    height: 15px;
+    width:60px;
 }
 
 .MyButton{

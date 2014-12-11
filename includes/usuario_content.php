@@ -14,7 +14,7 @@ if (isset($exe)) {
             break;
         case "modificar_alumno":
 //              echo 'Entro aqui_2 ' . $exe;
-            $Usuario_contenido = "view_inicio.php";
+            $Usuario_contenido = '../includes/alumno_modificar.php';
             break;
         case "eliminar_alumno":
 //              echo 'Entro aqui_3 ' . $exe;

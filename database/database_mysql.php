@@ -42,7 +42,7 @@ class Mysql_Conexion {
     
     public function setQuery($query) {
         $array = array();
-
+     
         try {
             if (isset($query)) {
               
@@ -51,11 +51,11 @@ class Mysql_Conexion {
                         $array[] = $row;
                     }
 //                    var_dump($array);
+                    
                     if ($array == NULL) {
                         $this->isError = TRUE;
                         $this->message = "nulo";
                     } else {
-                  
                         $this->isError = FALSE;
                         $this->message = "Ok!";
                     }
@@ -66,6 +66,8 @@ class Mysql_Conexion {
                     $this->messaje = 'Error en lectura de datos <br>';
                     $this->isError = TRUE;
                 }
+            }else{
+                 $this->messaje = 'Query Vacio o nulo';
             }
         } catch (Exception $ex) {
 

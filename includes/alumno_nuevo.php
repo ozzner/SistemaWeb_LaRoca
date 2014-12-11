@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        
+
         <!--Alumno config-->
         <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="../vendor/bootstrap-fileinput-master/css/fileinput.min.css" rel="stylesheet" type="text/css"/>
@@ -29,7 +29,7 @@
                     <div role="tabpanel" class="tab-pane active" id="alumno">
 
                         <fieldset>
-                            <legend>Datos alumno</legend>
+                            <legend>Datos del nuevo alumno</legend>
 
 
                             <div class="agrupar">
@@ -40,15 +40,16 @@
                             <div class="v_separador"></div>
 
                             <div class="MyRadioGroup">
-                                <input type="radio"  class="MyInputRadio" checked="true" value="M" name="sexo" data-toggle="tooltip" data-placement="right" title="Sexo masculino"/>&nbsp;Masculino<br>
-                                <input type="radio" class="MyInputRadio" value="F" name="sexo" data-toggle="tooltip" data-placement="right" title="Sexo femenino" />&nbsp;Femenino<br>
+                             
+                                    <input type="radio" style="height: 20px;" class="MyInputRadio" checked="true" value="M" name="sexo" data-toggle="tooltip" data-placement="right" title="Sexo masculino"/>&nbsp;Masculino<br>
+                                    <input type="radio" style="height: 20px;" class="MyInputRadio" value="F" name="sexo" data-toggle="tooltip" data-placement="right" title="Sexo femenino" />&nbsp;Femenino<br>
                             </div>
                         </fieldset>
 
                     </div>
                     <div role="tabpanel" class="tab-pane" id="padres">
                         <fieldset>
-                            <legend>Datos padres</legend>
+                            <legend>Datos de sus padres</legend>
 
                             <div class="agrupar">
                                 <input  name="papa"   class="MyInput" type="text" placeholder="Nombre de padre" data-toggle="tooltip" data-placement="bottom" title="Ingrese nombre de papá"/><br>
@@ -112,82 +113,82 @@
 
     <!--<script src="../js/jquery.js"></script>-->
     <!--<script src="../js/bootstrap.min.js"></script>-->
-    
-    <!--<script src="../js/jquery.js"></script>-->
-    <script src="../vendor/DataTable/js/jquery-1.11.1.min.js" type="text/javascript"></script>
-    <script src="../js/bootstrap.min.js"></script>
 
-    
+<!--<script src="../js/jquery.js"></script>-->
+<!--<script src="../vendor/DataTable/js/jquery-1.11.1.min.js" type="text/javascript"></script>-->
+        <script src="../js/bootstrap.min.js"></script>
 
 
-    <script>
-        $(document).ready(function () {
 
-            $('#btnGrabarAlumno').click(function () {
 
-                if ($("#fech").val().length < 1 || $("#nom").val().length < 1 || $("#dire").val().length < 1) {
-                    MostrarMensaje();
-                    $("#message_usuario").removeClass();
-                    $("#message_usuario").addClass("MyInfo");
-                    $("#message_usuario").text("Los campos marcados de ROJO son OBLIGATORIOS.");
-                    OcultarMensaje();
-                }
+        <script>
+                                    $(document).ready(function () {
+
+                                        $('#btnGrabarAlumno').click(function () {
+
+                                            if ($("#fech").val().length < 1 || $("#nom").val().length < 1 || $("#dire").val().length < 1) {
+                                                MostrarMensaje();
+                                                $("#message_usuario").removeClass();
+                                                $("#message_usuario").addClass("MyInfo");
+                                                $("#message_usuario").text("Los campos marcados de ROJO son OBLIGATORIOS.");
+                                                OcultarMensaje();
+                                            }
 
 <?php if ($message != '') { ?>
-                    OcultarMensaje();
+                                                OcultarMensaje();
 <?php } ?>
 
-            });
+                                        });
 
-            $("#cel").keyup(function () {
-                if ($("#cel").val().length > 9) {
-                    MostrarMensaje();
-                    $("#message_usuario").text("El número celular no puede ser mayor a 9 dígitos.");
-                    $("#message_usuario").removeClass();
-                    $("#message_usuario").addClass("MyWarning");
-//                    OcultarMensaje();
-                } else {
-                    $("#message_usuario").removeClass();
-                    $("#message_usuario").text("");
-                }
-//alert("kEY UP");
+                                        $("#cel").keyup(function () {
+                                            if ($("#cel").val().length > 9) {
+                                                MostrarMensaje();
+                                                $("#message_usuario").text("El número celular no puede ser mayor a 9 dígitos.");
+                                                $("#message_usuario").removeClass();
+                                                $("#message_usuario").addClass("MyWarning");
+                                                //                    OcultarMensaje();
+                                            } else {
+                                                $("#message_usuario").removeClass();
+                                                $("#message_usuario").text("");
+                                            }
+                                            //alert("kEY UP");
 
-            });
+                                        });
 
 <?php if ($isError == TRUE) { ?>
 
-                //        alert("is error es true");
-                MostrarMensaje()
-                $("#message_usuario").removeClass();
-                $("#message_usuario").addClass("MyError");
-                OcultarMensaje();
+                                            //        alert("is error es true");
+                                            MostrarMensaje()
+                                            $("#message_usuario").removeClass();
+                                            $("#message_usuario").addClass("MyError");
+                                            OcultarMensaje();
 <?php } else if ($isError === FALSE) { ?>
-                //     alert("is error es FALSE");
-                MostrarMensaje()
-                $("#message_usuario").removeClass();
-                $("#message_usuario").addClass("MySuccess");
-                OcultarMensaje();
+                                            //     alert("is error es FALSE");
+                                            MostrarMensaje()
+                                            $("#message_usuario").removeClass();
+                                            $("#message_usuario").addClass("MySuccess");
+                                            OcultarMensaje();
 <?php } else if ($isError == NULL) { ?>
-                //     alert("is error es NULO");
-                $("#message_usuario").removeClass();
+                                            //     alert("is error es NULO");
+                                            $("#message_usuario").removeClass();
 
-                //                $("#message_usuario").text("NADAA");
-                //                alert("Nulooo");
+                                            //                $("#message_usuario").text("NADAA");
+                                            //                alert("Nulooo");
 <?php } ?>
 
 
-        });
-    </script>
+                                    });
+        </script>
 
-    <script>
-        function OcultarMensaje() {
-            $("#message_usuario").fadeOut(4500);
-        }
+        <script>
+            function OcultarMensaje() {
+                $("#message_usuario").fadeOut(4500);
+            }
 
-        function MostrarMensaje() {
-            $("#message_usuario").fadeIn(0);
-        }
-    </script>
+            function MostrarMensaje() {
+                $("#message_usuario").fadeIn(0);
+            }
+        </script>
 
 
 

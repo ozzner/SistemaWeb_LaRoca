@@ -119,23 +119,7 @@ if (!$active) {
 
 
             </div>
-
-
-
         </div>
-
-
-
-        <!-- Menu Toggle Script -->
-
-<!--        <script src="../vendor/dataTables-1.10.4/js/jquery-1.11.1.min.js" type="text/javascript"></script>
-        <script src="../vendor/dataTables-1.10.4/js/jquery.dataTables.min.js" type="text/javascript"></script>-->
-
-<!--        <script>
-                    $(document).ready(function () {
-                        $('#example').dataTable();
-                    });
-        </script>-->
 
         <script>
             $("#sidebar-toggle").click(function (e) {
