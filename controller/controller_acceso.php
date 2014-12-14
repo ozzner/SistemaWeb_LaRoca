@@ -6,6 +6,7 @@ class AccesoController {
     private $contraseña;
     private $conexion;
     private $message;
+    private $isError;
 
 
     function __construct($usuario, $contraseña) {
@@ -20,8 +21,12 @@ class AccesoController {
     public function getMessage() {
         return $this->message;
     }
+    
+    function getIsError() {
+        return $this->isError;
+    }
 
-
+    
     public function isUserExist() {
         $query = "Select * "
                 . "From acceso "
@@ -38,13 +43,14 @@ class AccesoController {
                return TRUE;
            }else{
              $this->message = "¡El usuario no existe!";
+             $this->isError = TRUE;
              return FALSE;
            }
            
         }else{
             
             $mensaje = $this->conexion->getMessage();
-            header("Location: ../view/index.php?message=$mensaje");
+            header("Location: ../view/index.php?message=$mensaje&isError=$this->isError");
             
         }
         
@@ -69,6 +75,7 @@ class AccesoController {
      
             if ($error) {
                 $this->message = "¡Usuario y/o contraseña incorrecta!";
+                $this->isError = TRUE;
                 return FALSE;
             }else{
               $param = $data[0]["usuarioID"];

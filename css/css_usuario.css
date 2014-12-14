@@ -12,7 +12,7 @@
 #control_alumno .nav_list {
     background: transparent;
     height: 38px;
-    width: 350px;
+    width: 500px;
     border-radius: 1em;
     margin-bottom: -5px;
     margin-left: -1px;
@@ -118,6 +118,12 @@
 }
 
 #btnGrabarAlumno{
+    width:200px;
+    margin-left: 20px;
+
+}
+
+#btnActualizarAlumno{
     width:200px;
     margin-left: 20px;
 

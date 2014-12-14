@@ -1,7 +1,8 @@
 <?php
-
+error_reporting(E_ALL ^ E_NOTICE);
 include_once '../handler/handler_image.php';
 
+$alumnoID = utf8_decode(trim($_POST["alumnoID"]));
 $nom = utf8_decode(trim($_POST["nombres"]));
 $nac = $_POST["fecha"];
 $dir = utf8_decode(trim($_POST["direccion"]));
@@ -10,7 +11,14 @@ $dis = utf8_decode(trim($_POST["distrito"]));
 $gru = utf8_decode(trim($_POST["grupo"]));
 $nMa = utf8_decode(trim($_POST["mama"]));
 $nPa = utf8_decode(trim($_POST["papa"]));
-
+    //var_dump($alumnoID);
+    //var_dump($nom);
+    //var_dump($nac);
+    //var_dump($sex);
+    //var_dump($dis);
+    //var_dump($gru);
+    //var_dump($nMa);
+    //var_dump($nPa);
 
 if (!empty($nom) and ! empty($dir) and ! empty($nac)) {
     include_once '../controller/controller_alumno.php';
@@ -32,7 +40,7 @@ if (!empty($nom) and ! empty($dir) and ! empty($nac)) {
 
             if ($r != FALSE) {
                 $photo = $r;
-                $oAlum->storeNewAlumno($nom, $tel, $nMa, $nPa, $nac, $dir, $photo, $sex, $dis, $gru);
+                $oAlum->updateAlumno($alumnoID,$nom, null, $nMa, $nPa, $nac, $dir, $sex, $dis, $gru);
                 $message = $oAlum->getMessage();
                 $isError = $oAlum->getError();
             } else {
@@ -43,22 +51,22 @@ if (!empty($nom) and ! empty($dir) and ! empty($nac)) {
     } else if (strlen($_FILES['imagen']["name"]) <= 0 and strlen($_POST["celular"]) <= 0) {
 //        var_dump($_FILES['imagen']["name"]);
 //        var_dump($_POST["celular"]);
-
 //        echo 'Imagen y celular vacios';
         $photo = "Imagen_pendiente";
-        $oAlum->storeNewAlumno($nom, null, $nMa, $nPa, $nac, $dir, $photo, $sex, $dis, $gru);
+        $oAlum->updateAlumno($alumnoID,$nom, null, $nMa, $nPa, $nac, $dir, $sex, $dis, $gru);
         $message = $oAlum->getMessage();
         $isError = $oAlum->getError();
 //        var_dump($isError);
-        
     } else if (strlen($_POST["celular"]) > 0 and strlen($_FILES['imagen']["name"]) <= 0) {
 //        echo 'Solo celular lleno y imagen vacia';
 //        $r = $oImage->getImgNombre();
         $photo = "Imagen_pendiente";
-        var_dump($_FILES['imagen']["name"]);    
-       
+//        var_dump($_FILES['imagen']["name"]);
+
         if (!$oAlum->isPhoneExist($tel)) {
-            $oAlum->storeNewAlumno($nom, $tel, $nMa, $nPa, $nac, $dir, $photo, $sex, $dis, $gru);
+            $oAlum->updateAlumno($alumnoID,$nom, $tel, $nMa, $nPa, $nac, $dir, $sex, $dis, $gru);
+        }else{
+            $oAlum->updateAlumno($alumnoID,$nom, $tel, $nMa, $nPa, $nac, $dir, $sex, $dis, $gru);
         }
 
         $message = $oAlum->getMessage();
@@ -69,7 +77,7 @@ if (!empty($nom) and ! empty($dir) and ! empty($nac)) {
 
         if ($r != FALSE) {
             $photo = $r;
-            $oAlum->storeNewAlumno($nom, null, $nMa, $nPa, $nac, $dir, $photo, $sex, $dis, $gru);
+            $oAlum->updateAlumno($alumnoID,$nom, $photo, $nMa, $nPa, $nac, $dir, $sex, $dis, $gru);
             $message = $oAlum->getMessage();
             $isError = $oAlum->getError();
         } else {
@@ -77,6 +85,10 @@ if (!empty($nom) and ! empty($dir) and ! empty($nac)) {
             $isError = $oImage->getIsError();
         }
     }
-            header("Location: ?execute=opcion1&cmd=nuevo_alumno&message=$message&isError=$isError");
+
+
+    header("Location: ?execute=opcion1&cmd=modificar_alumno&message=$message&isError=$isError&usuarioID=$alumnoID");
+
+
 }
 ?>

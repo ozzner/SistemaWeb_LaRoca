@@ -51,14 +51,14 @@ $alumnos = $oAlumno->getAllAlumnos();
 
                     <?php foreach ($alumnos as $key => $value) { ?>
                         <tr>
-                            <td><input class="MyInputRadio" type="radio" name="alumnoID" value="<?php echo $value["alumnoID"] ?>"/></td>   
-                            <td name="alumnoID"><?php echo utf8_encode($value["alumnoID"]) ?></td>
-                            <td name="alumnoID"><?php echo utf8_encode($value["nombres"]) ?></td>
-                            <td name="alumnoID"><?php echo $value["telefono"] ?></td>
-                            <td name="alumnoID"><?php echo utf8_encode($value["nombrePapa"]) ?></td>
-                            <td name="alumnoID"><?php echo utf8_encode($value["nombreMama"]) ?></td>
-                            <td name="alumnoID"><?php echo $value["nacimiento"] ?></td>
-                            <td name="alumnoID"><?php echo utf8_encode($value["direccion"]) ?></td>
+                            <td ><input class="MyInputRadio" id="alum_id_radio" type="radio" name="alumnoID" value="<?php echo $value["alumnoID"] ?>"/></td>   
+                            <td ><?php echo utf8_encode($value["alumnoID"]) ?></td>
+                            <td ><?php echo utf8_encode($value["nombres"]) ?></td>
+                            <td ><?php echo $value["telefono"] ?></td>
+                            <td ><?php echo utf8_encode($value["nombrePapa"]) ?></td>
+                            <td ><?php echo utf8_encode($value["nombreMama"]) ?></td>
+                            <td ><?php echo $value["nacimiento"] ?></td>
+                            <td ><?php echo utf8_encode($value["direccion"]) ?></td>
                         </tr>
                     <?php } ?>
 
@@ -76,6 +76,7 @@ $alumnos = $oAlumno->getAllAlumnos();
         <script>
             $(document).ready(function () {
                 $('#example').dataTable();
+                $("#listar_id").css({backgroundColor: '#8b0a50'});
             });
         </script>
     </body>

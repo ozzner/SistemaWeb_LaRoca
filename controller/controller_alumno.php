@@ -59,7 +59,7 @@ class AlumnoController {
 
     public function getAllAlumnos() {
         $query = "Select * From db_laroca.alumno "
-               . "Order By alumnoID asc;";
+                . "Order By alumnoID asc;";
 
         $data = array();
 
@@ -69,7 +69,7 @@ class AlumnoController {
             $data = $this->conexion->setQuery($query);
 
             $error = $this->conexion->getError();
-          
+
             if (!$error) {
                 return $data;
             } else {
@@ -85,15 +85,12 @@ class AlumnoController {
 
         $this->conexion->closeConnection();
     }
-    
-    
-    
-    
-    public function getAlumnoById($alumnoID){
-       $query = "Select * From alumno "
-              . "Where alumnoID = $alumnoID";
-       
-       $data = array();
+
+    public function getAlumnoById($alumnoID) {
+        $query = "Select * From alumno "
+                . "Where alumnoID = $alumnoID";
+
+        $data = array();
 
         try {
 
@@ -101,7 +98,7 @@ class AlumnoController {
             $data = $this->conexion->setQuery($query);
 
             $error = $this->conexion->getError();
-          
+
             if (!$error) {
                 return $data;
             } else {
@@ -116,8 +113,93 @@ class AlumnoController {
         }
 
         $this->conexion->closeConnection();
-        
     }
+
+    public function updateAlumno($alumnoID, $nom, $tel, $nPa, $nMa, $nac, $dir, $sex, $dis, $gru) {
+        $query = "Update alumno Set "
+                . "nombres = ? , "
+                . "telefono = ? , "
+                . "nombrePapa = ? , "
+                . "nombreMama = ? , "
+                . "nacimiento = ? , "
+                . "direccion = ? , "
+                . "sexo = ? , "
+                . "distritoID = ? , "
+                . "grupoID = ? "
+                . "Where alumnoID = ?";
+
+        try {
+
+            $conection = $this->conexion->startConnection();
+            $stmt = $conection->prepare($query);
+            $stmt->bind_param("sisssssiii",  $nom, $tel, $nMa, $nPa, $nac, $dir, $sex, $dis, $gru,$alumnoID);
+//            var_dump($stmt->execute());
+      
+            if (!$stmt->execute()) {
+                $info = "Execute failed";
+            }
+            
+            $num_affected_rows = $stmt->affected_rows;
+            $stmt->close();
+
+            if ($num_affected_rows > 0) {
+                $this->error = FALSE;
+                $this->message = USER_UPDATED;
+            } else {
+                $this->error = TRUE;
+                $this->message = USER_FAILED_UPDATED . "\n " . $info;;
+            }
+            
+        } catch (Exception $exc) {
+
+            $this->error = TRUE;
+            $this->message = $exc->getCode();
+        }
+
+//        $this->conexion->closeConnection();
+    }
+    
+    
+    
+    public function deleteAlumnoById($alumnoID){
+        
+       $query = "Delete From alumno "
+              . "Where alumnoID=?;";
+       
+           try {
+
+            $conection = $this->conexion->startConnection();
+            $stmt = $conection->prepare($query);
+            $stmt->bind_param("i",$alumnoID);
+      
+            if (!$stmt->execute()) {
+                $info = "Execute failed";
+            }
+            
+            $num_affected_rows = $stmt->affected_rows;
+            $stmt->close();
+
+            if ($num_affected_rows > 0) {
+                $this->error = FALSE;
+                $this->message = USER_DELETED;
+            } else {
+                $this->error = TRUE;
+                $this->message = USER_FAILED_DELETED . "\n " . $info;;
+            }
+            
+            
+        } catch (Exception $exc) {
+
+            $this->error = TRUE;
+            $this->message = $exc->getMessage();
+        }
+       
+//           $conection = $this->conexion->closeConnection();
+    }
+    
+    
+    
+    
     
     
     

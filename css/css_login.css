@@ -1,0 +1,112 @@
+/* 
+    Created on : 14/12/2014, 08:55:54 AM
+    Author     : Renzo Santillán
+*/
+
+body{
+    background: #b9b9b9;
+}
+
+header{
+    background: gray;
+    height: 55px;
+}
+#div_login{
+    height: 15px !important;
+    text-align: center;
+    padding: 25px;
+}
+#encabezado_login{
+/*    color: #428bca !important;*/
+    font-size: 17px;
+    padding:10px;
+}
+
+#main_login{
+    top:40px;
+    position: relative; 
+    text-align: center;
+    background: whitesmoke;
+    padding: 5px;
+    width: 35%;
+    margin: 0 auto;
+    height: 350px;
+    text-align: center !important;
+
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(255,255,255,0.5), inset 0px 0px 10px 0px rgba(80,80,80,0.7);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(255,255,255,0.5), inset 0px 0px 10px 0px rgba(80,80,80,0.7);
+    box-shadow: 0px 0px 15px 0pxrgba(255,255,255,0.5), inset 0px 0px 10px 0px rgba(80,80,80,0.7);
+
+    border-radius: 4px;
+    border:solid 2px #ccc;
+
+}
+
+.controles_form_login{
+    padding: 10px !important;
+
+    /*background:green;*/
+}
+
+
+#usuario_login{
+    background: url( ../resources/img/_user.png) no-repeat left !important;
+    -webkit-box-shadow:inset 0px 0px 15px 0px rgba(255,255,255,0.5),  0px 0px 4px 0px rgba(80,80,80,0.7);
+    -moz-box-shadow:inset 0px 0px 15px 0px rgba(255,255,255,0.5),  0px 0px 4px 0px rgba(80,80,80,0.7);
+    box-shadow: inset 0px 0px 15px 0pxrgba(255,255,255,0.5),  0px 0px 4px 0px rgba(80,80,80,0.7);
+}
+
+#usuario_login:focus{
+    background: url( ../resources/img/_user.png) no-repeat left !important;
+    color:green;
+}
+
+
+#clave_login{
+    -webkit-box-shadow:inset 0px 0px 15px 0px rgba(255,255,255,0.5),  0px 0px 4px 0px rgba(80,80,80,0.7);
+    -moz-box-shadow:inset 0px 0px 15px 0px rgba(255,255,255,0.5),  0px 0px 4px 0px rgba(80,80,80,0.7);
+    box-shadow: inset 0px 0px 15px 0pxrgba(255,255,255,0.5),  0px 0px 4px 0px rgba(80,80,80,0.7);
+
+    background: url( ../resources/img/lock-32.png) no-repeat left !important;
+    margin-top: 8px !important;
+}
+
+#clave_login:focus{
+    background: url( ../resources/img/lock-32.png) no-repeat left !important;
+    color:red;
+
+}
+
+
+
+#main_login input {
+    font-size: 20px;
+    width:  320px;
+    text-align: center;
+    border-radius: 5px !important;
+}
+
+#submit_login{
+    margin-top:30px;
+    width:342px !important;
+    height: 45px !important;
+    font-size: 18px !important;
+    border:solid 2px #02a902 !important;
+}
+#submit_login:active{
+    margin-top:31px;
+}
+
+#mensaje{
+    margin-top:10px;
+    padding:10px;
+    height: 20px !important;
+}
+#lblMensaje,#encabezado_login{
+    border-radius: 1em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 20px;
+    font-size: 15px;   
+}

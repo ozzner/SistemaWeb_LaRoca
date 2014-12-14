@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<?php 
+error_reporting(E_ALL ^ E_NOTICE);
+include_once '../includes/usuario_insert.php';
+
+$message = $_REQUEST["message"];
+$isError = $_REQUEST["isError"];
+//var_dump($isError);
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -12,7 +20,7 @@
         <title></title>
     </head>
     <body>
-        <form method="post" action="" id="form_view_user" enctype="multipart/form-data">
+        <form method="post" action="../includes/usuario_insert.php" id="form_view_user" enctype="multipart/form-data">
 
             <div role="tabpanel" id="alumno_content">
 
@@ -108,7 +116,7 @@
                 </div>
             </div>
 
-            <button class="MyButton" id="btnGrabarAlumno" type="submit">Grabar</button><span id="message_usuario" ><?php echo $message; ?></span>
+            <button class="MyButton_green" id="btnGrabarAlumno" type="submit">Grabar</button><span id="message_usuario" ><?php echo $message; ?></span>
         </form>
 
     <!--<script src="../js/jquery.js"></script>-->
@@ -124,6 +132,8 @@
         <script>
                                     $(document).ready(function () {
 
+                                        $("#agregar_id").css({backgroundColor: '#8b0a50'});
+                                    
                                         $('#btnGrabarAlumno').click(function () {
 
                                             if ($("#fech").val().length < 1 || $("#nom").val().length < 1 || $("#dire").val().length < 1) {
@@ -157,20 +167,21 @@
 
 <?php if ($isError == TRUE) { ?>
 
-                                            //        alert("is error es true");
+//                                                    alert("is error es true");
                                             MostrarMensaje()
                                             $("#message_usuario").removeClass();
                                             $("#message_usuario").addClass("MyError");
                                             OcultarMensaje();
-<?php } else if ($isError === FALSE) { ?>
-                                            //     alert("is error es FALSE");
+<?php } else if ($isError === NULL) { ?>
+//        alert("is error es NULO");
+                                            $("#message_usuario").removeClass();
+<?php } else if ($isError == 0) { ?>
+                                             
+//                                                 alert("is error es FALSE");
                                             MostrarMensaje()
                                             $("#message_usuario").removeClass();
                                             $("#message_usuario").addClass("MySuccess");
                                             OcultarMensaje();
-<?php } else if ($isError == NULL) { ?>
-                                            //     alert("is error es NULO");
-                                            $("#message_usuario").removeClass();
 
                                             //                $("#message_usuario").text("NADAA");
                                             //                alert("Nulooo");

@@ -71,7 +71,12 @@ img,video {
     max-width: 100%;
 }
 
+tbody tr:hover{
+    /*border:solid 1px red !important;*/
+    color: rgba(205,96,144,1);;
+}
 
+/*(102,153,255)*/
 /************* GENERAL FONTS ***************/
 
 #content_clock #profesorID{
@@ -197,7 +202,11 @@ h1,h2,h3,h4,h5,#reloj{
     width:60px;
 }
 
-.MyButton{
+.MyInputHidden{
+
+}
+
+.MyButton_green{
 
     background: #02a902;
     color: whitesmoke;
@@ -217,23 +226,65 @@ h1,h2,h3,h4,h5,#reloj{
     transition:all .2s ease;   
 }
 
-.MyButton:active{
+.MyButton_green:active{
     border-radius: 2px;
     margin-top: 1px;
     border-bottom:solid 1px #00cd00;
 }
 
-.MyButton:hover{
+.MyButton_green:hover{
     border-radius: 2px;
     background:#058705;
     border:solid 1px #058705;
     border-bottom: solid 3px #058705;
 }
 
-.MyButton:enabled{
+.MyButton_green:enabled{
     border-radius: 2px;
     outline: none !important;
 }
+
+.MyButton_blue{
+
+    background: #4876ff;
+    color: whitesmoke;
+    height: 35px;
+    width: 130px;
+    padding: 5px;
+    border:solid 1px #0066cc;
+    border-bottom: solid 3px #0066cc;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 17px;
+
+    -webkit-transition:all .2s ease;  
+    -o-transition:all .2s ease;   
+    -moz-transition:all .2s ease;   
+    -ms-transition:all .2s ease;   
+    transition:all .2s ease;   
+}
+
+.MyButton_blue:active{
+    border-radius: 2px;
+    margin-top: 1px;
+    border-bottom:solid 1px #0066cc;
+}
+
+.MyButton_blue:hover{
+    border-radius: 2px;
+    background:#0066cc;
+    border:solid 1px #0066cc;
+    border-bottom: solid 3px #0066cc;
+}
+
+.MyButton_blue:enabled{
+    border-radius: 2px;
+    outline: none !important;
+}
+
+
+
+
 
 /************* GENERAL COMODINES ***************/
 .v_separador{
@@ -263,6 +314,19 @@ input:invalid {
     border: 2px solid blue;
 }
 
+input:disabled{
+    cursor: no-drop !important;
+    background: #ddd !important;
+    color:gray;
+    text-align: center;
+    opacity: 0.6;
+    width: 60px;
+    padding: 0;
+    border: solid 2px #b9b9b9 !important;
+}
+
+
+
 /************* GENERAL MESSAGES ***************/
 
 .MyInfo, .MySuccess, .MyWarning, .MyError, .MyValidation {
@@ -276,31 +340,31 @@ input:invalid {
 
 
 .MyInfo {
-    color: #00529B;
-    background-color: #BDE5F8;
-    background-image: url('../resources/img/information.png');
+    color: #00529B !important;
+    background-color: #BDE5F8 !important;
+    background-image: url('../resources/img/information.png') !important;
 }
 
 .MySuccess {
-    color: #4F8A10;
-    background-color: #DFF2BF;
-    background-image: url('../resources/img/done.png');
+    color: #4F8A10 !important;
+    background-color: #DFF2BF !important;
+    background-image: url('../resources/img/done.png') !important;
 }
 
 .MyWarning {
-    color: #9F6000;
-    background-color: #FEEFB3;
-    background-image: url('../resources/img/warning.png');
+    color: #9F6000 !important;
+    background-color: #FEEFB3 !important;
+    background-image: url('../resources/img/warning.png') !important;
 }
 
 .MyError{
-    color: #D8000C;
-    background-color: #FFBABA;
-    background-image: url('../resources/img/error.png');
+    color: #D8000C !important;
+    background-color: #FFBABA !important;
+    background-image: url('../resources/img/error.png') !important;
 }
 
 .MyValidation{
-    color: #D63301;
-    background-color: #FFCCBA;
-    background-image: url('img/validation.png');
+    color: #D63301 !important;
+    background-color: #FFCCBA !important;
+    background-image: url('img/validation.png') !important;
 }

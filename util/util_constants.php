@@ -1,8 +1,12 @@
 <?php
 
-/*+++++++++++++ CONTROLLERS +++++++++++++*/
+/*+++++++++++++ CONTROLLERS USUARIO +++++++++++++*/
 define('USER_CREATED', "¡Usuario creado correctamente!");
-define('USER_FAILED', "¡Error al crear usuario!");
+define('USER_UPDATED', "¡Usuario actualizado correctamente!");
+define('USER_DELETED', "¡Usuario eliminado correctamente!");
+define('USER_FAILED_CREATED', "¡Error al crear usuario!");
+define('USER_FAILED_UPDATED', "¡Error al actualizar usuario!");
+define('USER_FAILED_DELETED', "¡Error al eliminar usuario!");
 define('USER_PHONE_EXIST', "¡El celular ya ha sido registrado!");
 
 
@@ -20,4 +24,5 @@ define('IMAGE_UPLOAD_OK',  "El archivo ha sido movido exitosamente.");
 define('IMAGE_UPLOAD_FAILED',  "Ocurrio un error al momento de subir el archivo al servidor.");
 
 ?>
+
 

@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 include_once '../model/model_alumno.php';
+include_once '../includes/usuario_update.php';
+$message = $_REQUEST["message"];
+$isError = $_REQUEST["isError"];
+//var_dump($_REQUEST["usuarioID"]);
 
-
-if (isset($_REQUEST["usuarioID"])) {
+if ($_REQUEST["usuarioID"] !== "undefined" AND $_REQUEST["usuarioID"] !== "") {
 
     $alumnoID = $_REQUEST["usuarioID"];
     $oAlumno = new AlumnoController();
@@ -22,7 +26,12 @@ if (isset($_REQUEST["usuarioID"])) {
     $aMoldel->setNombres(utf8_encode($alumno[0]["nombres"]));
     $aMoldel->setSexo($alumno[0]["sexo"]);
     $aMoldel->setTelefono($alumno[0]["telefono"]);
+}else{
+    header("Location: ?execute=opcion1&cmd=list");
 }
+
+
+
 ?>
 <html>
     <head>
@@ -36,7 +45,7 @@ if (isset($_REQUEST["usuarioID"])) {
         <title></title>
     </head>
     <body>
-        <form method="post" action="" id="form_view_user" enctype="multipart/form-data">
+        <form method="post" action="#" id="form_view_user" enctype="multipart/form-data">
 
             <div role="tabpanel" id="alumno_content">
 
@@ -52,15 +61,16 @@ if (isset($_REQUEST["usuarioID"])) {
                 <div class="tab-content" id="tabContentID">
                     <div role="tabpanel" class="tab-pane active" id="alumno">
 
-                        <fieldset>
-                            <legend><?php echo ($aMoldel->getNombres() . " - Cod[" . $aMoldel->getAlumnoID() . "]"); ?></legend>
+                        <fieldset style="color:#4876ff;">
+                            <legend ><?php echo ($aMoldel->getNombres() . " - Cod[" . $aMoldel->getAlumnoID() . "]"); ?></legend>
 
                             <div class="agrupar">
+                                <input required="true" id="alumnoID" name="alumnoID" value="<?php echo $aMoldel->getAlumnoID(); ?>" class="MyInput" type="text"  data-toggle="tooltip" data-placement="right" title="Código de alumno"/><br>
                                 <input required="true" id="nom" name="nombres" value="<?php echo $aMoldel->getNombres(); ?>" class="MyInput" type="text" placeholder="Ingrese nombres" data-toggle="tooltip" data-placement="right" title="Nombres de alumno"/><br>
                                 <input required="true" id="fech" name="fecha" value="<?php echo $aMoldel->getNacimiento(); ?>"  class="MyInput" type="date" placeholder="Fecha nacimiemto" data-toggle="tooltip" data-placement="right" title="Su cumpleaños"/><br>
                             </div>
 
-                            <div class="v_separador"></div>
+                            <div class="v_separador" style="height: 140px;"></div>
 
                             <div class="MyRadioGroup">
                                 <?php if ($aMoldel->getSexo() == 'M') { ?>
@@ -76,7 +86,7 @@ if (isset($_REQUEST["usuarioID"])) {
 
                     </div>
                     <div role="tabpanel" class="tab-pane" id="padres">
-                        <fieldset>
+                        <fieldset  style="color:#4876ff;">
                             <legend>Datos padres</legend>
 
                             <div class="agrupar">
@@ -92,7 +102,7 @@ if (isset($_REQUEST["usuarioID"])) {
 
                     </div>
                     <div role="tabpanel" class="tab-pane" id="ubicacion">
-                        <fieldset>
+                        <fieldset style="color:#4876ff;">
                             <legend>Ubicación del alumno</legend>
                             <div class="agrupar">
                                 <select required="true" name="grupo" class="MyDropdown" onclick="display_usgs_change()" data-toggle="tooltip" data-placement="top" title="Grupo al que pertenece">
@@ -136,7 +146,7 @@ if (isset($_REQUEST["usuarioID"])) {
                 </div>
             </div>
 
-            <button class="MyButton" id="btnGrabarAlumno" type="submit">Actualizar</button><span id="message_usuario" ><?php echo $message; ?></span>
+            <button class="MyButton_blue" id="btnActualizarAlumno" type="submit">Actualizar</button><span id="message_usuario" ><?php echo $message; ?></span>
         </form>
 
     <!--<script src="../js/jquery.js"></script>-->
@@ -151,8 +161,9 @@ if (isset($_REQUEST["usuarioID"])) {
 
         <script>
                                     $(document).ready(function () {
-
-                                        $('#btnGrabarAlumno').click(function () {
+                                        document.getElementById("alumnoID").disabled = true;
+                                         $("#modificar_id").css({backgroundColor: '#8b0a50'});
+                                        $('#btnActualizarAlumno').click(function () {
 
                                             if ($("#fech").val().length < 1 || $("#nom").val().length < 1 || $("#dire").val().length < 1) {
                                                 MostrarMensaje();
@@ -160,6 +171,8 @@ if (isset($_REQUEST["usuarioID"])) {
                                                 $("#message_usuario").addClass("MyInfo");
                                                 $("#message_usuario").text("Los campos marcados de ROJO son OBLIGATORIOS.");
                                                 OcultarMensaje();
+                                            }else{
+                                                 document.getElementById("alumnoID").disabled = false;
                                             }
 
 <?php if ($message != '') { ?>
@@ -190,16 +203,16 @@ if (isset($_REQUEST["usuarioID"])) {
                                             $("#message_usuario").removeClass();
                                             $("#message_usuario").addClass("MyError");
                                             OcultarMensaje();
-<?php } else if ($isError === FALSE) { ?>
-                                            //     alert("is error es FALSE");
+<?php } else if ($isError === NULL) { ?>
+//        alert("is error es NULO");
+                                            $("#message_usuario").removeClass();
+<?php } else if ($isError == 0) { ?>
+                                             
+//                                                 alert("is error es FALSE");
                                             MostrarMensaje()
                                             $("#message_usuario").removeClass();
                                             $("#message_usuario").addClass("MySuccess");
                                             OcultarMensaje();
-<?php } else if ($isError == NULL) { ?>
-                                            //     alert("is error es NULO");
-                                            $("#message_usuario").removeClass();
-
                                             //                $("#message_usuario").text("NADAA");
                                             //                alert("Nulooo");
 <?php } ?>
