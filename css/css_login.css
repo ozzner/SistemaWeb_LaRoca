@@ -29,6 +29,7 @@ header{
     background: whitesmoke;
     padding: 5px;
     width: 35%;
+    min-width: 370px;
     margin: 0 auto;
     height: 350px;
     text-align: center !important;
@@ -74,13 +75,10 @@ header{
 #clave_login:focus{
     background: url( ../resources/img/lock-32.png) no-repeat left !important;
     color:red;
-
 }
 
-
-
 #main_login input {
-    font-size: 20px;
+    font-size: 18px;
     width:  320px;
     text-align: center;
     border-radius: 5px !important;
@@ -102,11 +100,8 @@ header{
     padding:10px;
     height: 20px !important;
 }
+
 #lblMensaje,#encabezado_login{
-    border-radius: 1em;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 50px;
-    padding-right: 20px;
     font-size: 15px;   
+    /*background: red;*/
 }

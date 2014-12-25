@@ -5,6 +5,7 @@ $exe = $_REQUEST["execute"];
 
 if (isset($exe)) {
 
+
     switch ($exe) {
 
         case "opcion0":
@@ -21,6 +22,11 @@ if (isset($exe)) {
             $titulo = "Iniciar clase";
             $contenido = "view_iniciar_clase.php";
             $submenu = "../includes/submenu_default.php";
+            break;
+        case "opcion3":
+            $titulo = "Gestion enseñanza";
+            $contenido = "view_ensenanza.php";
+            $submenu = "../includes/submenu_usuario.php";
             break;
         default :
             $contenido = "view_inicio.php";

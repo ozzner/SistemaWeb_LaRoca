@@ -12,7 +12,6 @@ $alumnos = $oAlumno->getAllAlumnos();
     <head>
         <meta charset="UTF-8">
         <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <!--<link href="../vendor/DataTable/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
         <link href="../vendor/DataTable/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css"/>
         <title></title>
     </head>
@@ -47,8 +46,6 @@ $alumnos = $oAlumno->getAllAlumnos();
                     </tr>
                 </tfoot>
                 <tbody>
-
-
                     <?php foreach ($alumnos as $key => $value) { ?>
                         <tr>
                             <td ><input class="MyInputRadio" id="alum_id_radio" type="radio" name="alumnoID" value="<?php echo $value["alumnoID"] ?>"/></td>   
@@ -61,12 +58,10 @@ $alumnos = $oAlumno->getAllAlumnos();
                             <td ><?php echo utf8_encode($value["direccion"]) ?></td>
                         </tr>
                     <?php } ?>
-
                 </tbody>
             </table>
 
 
-            <!--<script src="../vendor/DataTable/js/jquery-1.11.1.min.js" type="text/javascript"></script>-->
             <script src="../vendor/DataTable/js/jquery.dataTables.min.js" type="text/javascript"></script>
             <script src="../vendor/DataTable/js/dataTables.bootstrap.js" type="text/javascript"></script>
 
@@ -79,5 +74,6 @@ $alumnos = $oAlumno->getAllAlumnos();
                 $("#listar_id").css({backgroundColor: '#8b0a50'});
             });
         </script>
+        
     </body>
 </html>

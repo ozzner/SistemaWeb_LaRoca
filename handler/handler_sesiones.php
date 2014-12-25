@@ -12,7 +12,7 @@ class SesionHandler {
     public function storeMySession($object) {
 
         if (isset($object)) {
-            $_SESSION[$this->session_name] = $object;
+            $_SESSION[$this->session_name] = ($object);
         } 
     }
 

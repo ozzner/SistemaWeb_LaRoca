@@ -42,10 +42,10 @@ class Mysql_Conexion {
     
     public function setQuery($query) {
         $array = array();
-     
+        
         try {
             if (isset($query)) {
-              
+
                 if ($r = Mysql_Conexion::$connection->query($query)) {
                     while ($row = $r->fetch_assoc()) {
                         $array[] = $row;

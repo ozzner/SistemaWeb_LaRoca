@@ -32,7 +32,7 @@ if (!empty($contraseña) and ! empty($usuario)) {
         $oSession = new SesionHandler("profesor");
 //         var_dump($oSession);
 
-        $oSession->storeMySession($oProfesor);
+        $oSession->storeMySession(serialize($oProfesor));
 
         header("Location: ../view/view_cpanel.php?execute=opcion0");
     }

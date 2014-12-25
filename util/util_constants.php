@@ -1,6 +1,6 @@
 <?php
 
-/*+++++++++++++ CONTROLLERS USUARIO +++++++++++++*/
+/*+++++++++++++ USUARIO +++++++++++++*/
 define('USER_CREATED', "¡Usuario creado correctamente!");
 define('USER_UPDATED', "¡Usuario actualizado correctamente!");
 define('USER_DELETED', "¡Usuario eliminado correctamente!");
@@ -8,6 +8,14 @@ define('USER_FAILED_CREATED', "¡Error al crear usuario!");
 define('USER_FAILED_UPDATED', "¡Error al actualizar usuario!");
 define('USER_FAILED_DELETED', "¡Error al eliminar usuario!");
 define('USER_PHONE_EXIST', "¡El celular ya ha sido registrado!");
+
+/*+++++++++++++ ENSEÑANZA +++++++++++++*/
+define('TEACHING_CREATED', "¡Enseñanza creada correctamente!");
+define('TEACHING_FAILED_CREATED', "¡Error al crear la enseñanza!");
+define('TEACHING_UPDATED', "¡Se ha iniciado la enseñanza!");
+define('TEACHING_FAILED_UPDATED', "¡No se pudo iniciar la enseñañza!");
+
+
 
 
 /*+++++++++++++ UTILS +++++++++++++*/

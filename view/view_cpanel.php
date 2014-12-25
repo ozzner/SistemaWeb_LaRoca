@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
 error_reporting(E_ALL ^ E_NOTICE);
-/* * *** Includes **** */
+
+/***** Includes *****/
 include_once '../includes/admin_content.php';
 include_once '../handler/handler_sesiones.php';
 include_once '../model/model_profesor.php';
@@ -12,9 +13,11 @@ $session = new SesionHandler("profesor");
 $active = $session->isActiveSession();
 
 if (!$active) {
-    header("Location: index.php?message=sessión expirada");
+    header("Location: index.php?message=Su sessión ha expirado");
     exit();
 }
+
+
 ?>
 
 <html>
@@ -25,15 +28,12 @@ if (!$active) {
         <link href="../css/css_general.css" rel="stylesheet" type="text/css"/>
         <link href="../css/css_header.css" rel="stylesheet" type="text/css"/>
 
-        <!-- Bootstrap Core CSS -->
-<!--        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>-->
         <!-- Custom CSS -->
         <link href="../css/simple-sidebar.css" rel="stylesheet">
-        <!--<script src="../vendor/jquery-2.1.1/jquery-2.1.1.min.js" type="text/javascript"></script>-->
         <script src="../vendor/DataTable/js/jquery-1.11.1.min.js" type="text/javascript"></script>
         <title><?php echo $titulo; ?></title>
     </head>
+    
     <body onload="startTime()">
 
         <header>
@@ -43,8 +43,10 @@ if (!$active) {
 
             <div id="content_clock">
                 <?php
-                $name = utf8_encode($_SESSION["profesor"]->getNombres());
-                $cod = $_SESSION["profesor"]->getProfesorID();
+                $MySession = unserialize($_SESSION["profesor"]);
+//                var_dump($MySession);
+                $name = utf8_encode($MySession->getNombres());
+                $cod = $MySession->getProfesorID();
                 ?>
                 <label id="profesorID"><?php echo "$name - Cod[00$cod]"; ?></label><br>
                 <span id="reloj"></span>
@@ -97,7 +99,7 @@ if (!$active) {
                             <a id="opcion2" href="?execute=opcion2">Iniciar clase</a>
                         </li>
                         <li>
-                            <a href="#">Enseñanzas</a>
+                            <a id="opcion3" href="?execute=opcion3">Enseñanzas</a>
                         </li>
                         <li>
                             <a href="#">Análisis y búsqueda</a>

@@ -73,8 +73,21 @@ img,video {
 
 tbody tr:hover{
     /*border:solid 1px red !important;*/
-    color: rgba(205,96,144,1);;
+    color: rgba(205,96,144,1);
 }
+
+thead,tfoot{
+    background: #888 !important;
+    color: white;
+   
+    height: 12px !important;
+}
+
+th{
+     font-weight:normal !important;
+}
+
+
 
 /*(102,153,255)*/
 /************* GENERAL FONTS ***************/
@@ -138,7 +151,7 @@ h1,h2,h3,h4,h5,#reloj{
 /************* GENERAL CONTENTS ***************/
 .MyContents{
     margin-left: 20px;
-    margin-right:  10px;
+    margin-right:  0px;
     padding: 5px;
     /*background: lawngreen;*/
     /*    height: 650px;*/
@@ -174,6 +187,16 @@ h1,h2,h3,h4,h5,#reloj{
     padding: 9px;
     display: inline-block;
 }
+
+.MyTable tr:nth-child(even) { /*(even) or (2n 0)*/
+	background:rgba(185,185,185,0.15);
+}
+
+.MyTable tr:nth-child(odd) { /*(odd) or (2n 1)*/
+	
+}
+
+
 
 
 /************* GENERAL INPUTS ***************/
@@ -213,8 +236,8 @@ h1,h2,h3,h4,h5,#reloj{
     height: 35px;
     width: 130px;
     padding: 5px;
-    border:solid 1px #058705;
-    border-bottom: solid 3px #058705;
+    border:solid 2px #02a902;
+    /*    border-bottom: solid 3px #058705;*/
     text-decoration: none;
     border-radius: 2px;
     font-size: 17px;
@@ -229,14 +252,13 @@ h1,h2,h3,h4,h5,#reloj{
 .MyButton_green:active{
     border-radius: 2px;
     margin-top: 1px;
-    border-bottom:solid 1px #00cd00;
 }
 
 .MyButton_green:hover{
     border-radius: 2px;
     background:#058705;
-    border:solid 1px #058705;
-    border-bottom: solid 3px #058705;
+    border:solid 2px #02a902;
+
 }
 
 .MyButton_green:enabled{
@@ -251,8 +273,8 @@ h1,h2,h3,h4,h5,#reloj{
     height: 35px;
     width: 130px;
     padding: 5px;
-    border:solid 1px #0066cc;
-    border-bottom: solid 3px #0066cc;
+    border:solid 2px #4876ff;
+    /*    border-bottom: solid 3px #0066cc;*/
     text-decoration: none;
     border-radius: 2px;
     font-size: 17px;
@@ -267,14 +289,12 @@ h1,h2,h3,h4,h5,#reloj{
 .MyButton_blue:active{
     border-radius: 2px;
     margin-top: 1px;
-    border-bottom:solid 1px #0066cc;
 }
 
 .MyButton_blue:hover{
     border-radius: 2px;
     background:#0066cc;
-    border:solid 1px #0066cc;
-    border-bottom: solid 3px #0066cc;
+    border:solid 2px #4876ff;
 }
 
 .MyButton_blue:enabled{
@@ -336,6 +356,7 @@ input:disabled{
     background-repeat: no-repeat;
     background-position: 10px center;
     background-size: 22px 22px;
+    font-size: 14px !important;
 }
 
 

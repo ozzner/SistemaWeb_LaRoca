@@ -3,9 +3,9 @@
 error_reporting(E_ALL ^ E_NOTICE);
 $mensaje = $_REQUEST["message"];
 
-if (isset($_REQUEST["isError"])) {
+if (isset($mensaje)) {
     $isError = $_REQUEST["isError"];
-}else{
+} else {
     $mensaje = "Ingrese sus credenciales";
 }
 ?>
@@ -29,8 +29,8 @@ if (isset($_REQUEST["isError"])) {
 
 
                 <div class="controles_form_login">
-                    <input autocomplete="false" autofocus="true" id="usuario_login" class="MyInput" type="text" placeholder="Usuario" name="usuario"/>
-                    <input  autocomplete="false" id="clave_login" class="MyInput" type="password" placeholder="Contraseña" name="contraseña"/><br>
+                    <input autocomplete="off" autofocus="true" id="usuario_login" class="MyInput" type="text" placeholder="Usuario" name="usuario"/>
+                    <input  autocomplete="off" id="clave_login" class="MyInput" type="password" placeholder="Contraseña" name="contraseña"/><br>
                     <input id="submit_login" class="MyButton_green" type="submit" value="Iniciar"/>
                     <div id="mensaje">
                         <label id="lblMensaje"> </label>
@@ -61,7 +61,7 @@ if (isset($_REQUEST["isError"])) {
 
                     MostrarMensaje()
                     $("#encabezado_login").removeClass();
-    //                    $("#encabezado_login").addClass("MySuccess");
+                    //                    $("#encabezado_login").addClass("MySuccess");
                     OcultarMensaje();
 
 <?php } ?>
@@ -80,11 +80,34 @@ if (isset($_REQUEST["isError"])) {
 
             });
 
+            $("#usuario_login").keyup(function () {
+                $(this).css({"color": "green"});
+            });
+            $("#usuario_login").focus(function () {
+                $("#clave_login").css({"color": "black"});
+                $(this).css({"color": "green"});
+            });
+
 
             $("#clave_login").hover(function () {
 
                 $("#lblMensaje").removeClass();
                 $("#lblMensaje").text("");
+            });
+
+            $("#clave_login").keyup(function () {
+                $(this).css({"color": "red"});
+            });
+
+            $("#clave_login").focus(function () {
+                $(this).css({"color": "red"});
+                $("#usuario_login").css({"color": "black"});
+            });
+
+            $("#submit_login").hover(function () {
+
+                $("#clave_login").css({"color": "black"});
+                $("#usuario_login").css({"color": "black"});
             });
 
         </script>

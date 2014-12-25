@@ -119,7 +119,7 @@ $isError = $_REQUEST["isError"];
             <button class="MyButton_green" id="btnGrabarAlumno" type="submit">Grabar</button><span id="message_usuario" ><?php echo $message; ?></span>
         </form>
 
-    <!--<script src="../js/jquery.js"></script>-->
+
     <!--<script src="../js/bootstrap.min.js"></script>-->
 
 <!--<script src="../js/jquery.js"></script>-->

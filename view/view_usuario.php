@@ -25,7 +25,7 @@ $distritos = $oDistrito->getAllData();
 <!--Alumno config-->
 <!--<link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>-->
 <link href="../vendor/bootstrap-fileinput-master/css/fileinput.min.css" rel="stylesheet" type="text/css"/>
-<!--<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
+
 
 
 <div id="content_usuario_main" class="MyContents">
@@ -84,6 +84,53 @@ $distritos = $oDistrito->getAllData();
     <script src="../vendor/bootstrap-fileinput-master/js/fileinput.min.js" type="text/javascript"></script>
     <script src="../js/bootstrap.min.js" type="text/javascript"></script>
 
+
+    <script>
+        $(document).ready(function () {
+            $('#example').dataTable();
+            $("#listar_id").css({backgroundColor: '#8b0a50'});
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <script>
 
         $('table tr').click(function () {
@@ -93,7 +140,7 @@ $distritos = $oDistrito->getAllData();
             $(this).removeAttr('style');
             $(this).css('background', '#b9b9b9');
             $(this).css('color', 'white');
-             $("#radio_value").val(usuarioID);
+            $("#radio_value").val(usuarioID);
         });
 
         $('td').click(function () {
@@ -114,14 +161,12 @@ $distritos = $oDistrito->getAllData();
     <script>
 
         $("#modificar_id").click(function () {
-//            alert("click");
             var usuarioID = $("#radio_value").val();
             location.href = "?execute=opcion1&cmd=modificar_alumno&usuarioID=" + usuarioID + "";
         });
 
 
         $("#btnEliminar").click(function () {
-//            alert("click");
             var usuarioID = $("#radio_value").val();
             location.href = "../includes/usuario_delete.php?usuarioID=" + usuarioID;
         });

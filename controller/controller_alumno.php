@@ -17,6 +17,7 @@ class AlumnoController {
     }
 
     public function storeNewAlumno($nom, $tel, $nPa, $nMa, $nac, $dir, $fot, $sex, $dis, $gru) {
+        
         $query = "Insert Into alumno "
                 . "(nombres,"
                 . "telefono,"
