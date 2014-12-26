@@ -82,24 +82,44 @@ class EnsenanzaController {
         $this->conexion->closeConnection();
     }
 
-    public function updateEnsenanza($nombre, $estado, $enseñanzaID) {
-        $query = utf8_decode("Update ensenanza Set "
-                . "creadoPor = ? , "
-                . "estado = ? "
-                . "Where enseñanzaID = ? ;");
+    public function updateEnsenanza($nombre, $controller, $enseñanzaID) {
 
-        var_dump($query);
 
         try {
 
             $conection = $this->conexion->startConnection();
-            $stmt = $conection->prepare($query);
-            $stmt->bind_param("sii", $nombre, $estado, $enseñanzaID);
-//            var_dump($stmt->execute());
+
+            switch ($controller) {
+                case 1:
+                    $query = utf8_decode("Update ensenanza Set "
+                            . "creadoPor = ? , "
+                            . "estado = ? "
+                            . "Where enseñanzaID = ? ;");
+                    var_dump($query);
+                    $stmt = $conection->prepare($query);
+                    $stmt->bind_param("sii", $nombre, $controller, $enseñanzaID);
+                    break;
+                
+                case 2:
+                    $query = utf8_decode("Update ensenanza Set "
+                            . "estado = ? , "
+                            . "fechaTerminado = ? , "
+                            . "terminadoPor = ? "
+                            . "Where enseñanzaID = ? ;");
+                    
+                    $oDataTime = new DatatimeUtil();
+                    $now = $oDataTime->genDataTime(DATETIME_FORMAT);
+                    
+                    $stmt = $conection->prepare($query);
+                    $stmt->bind_param("issi", $controller,$now, $nombre,$enseñanzaID);
+                    break;
+
+                default:
+                    break;
+            }
 
             if (!$stmt->execute()) {
                 $info = "Execute failed";
-                echo $info;
             }
 
             $num_affected_rows = $stmt->affected_rows;
@@ -109,7 +129,7 @@ class EnsenanzaController {
                 $this->message = TEACHING_UPDATED;
                 $this->error = FALSE;
             } else {
-                $this->message = TEACHING_FAILED_UPDATED;
+                $this->message = TEACHING_FAILED_UPDATED .". ". $info;
                 $this->error = TRUE;
             }
         } catch (Exception $exc) {
@@ -118,6 +138,10 @@ class EnsenanzaController {
             $this->message = $exc->getCode();
         }
     }
+    
+    
+    
+    
 
     function getError() {
         return $this->error;

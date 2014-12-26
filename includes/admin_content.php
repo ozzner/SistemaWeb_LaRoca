@@ -25,8 +25,13 @@ if (isset($exe)) {
             break;
         case "opcion3":
             $titulo = "Gestion enseñanza";
-            $contenido = "view_ensenanza.php";
-            $submenu = "../includes/submenu_usuario.php";
+            $contenido = "view_ensenanza_estado.php";
+            $submenu = "../includes/submenu_ensenanza.php";
+            break;
+        case "opcion4":
+            $titulo = "Gestion enseñanza";
+            $contenido = "view_ensenanza_historial.php";
+            $submenu = "../includes/submenu_ensenanza.php";
             break;
         default :
             $contenido = "view_inicio.php";

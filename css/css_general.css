@@ -266,6 +266,45 @@ h1,h2,h3,h4,h5,#reloj{
     outline: none !important;
 }
 
+
+.MyButton_red{
+
+    background: #ee2c2c;
+    color: whitesmoke;
+    height: 35px;
+    width: 130px;
+    padding: 5px;
+    border:solid 2px #ee2c2c;
+    /*    border-bottom: solid 3px #058705;*/
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 17px;
+
+    -webkit-transition:all .2s ease;  
+    -o-transition:all .2s ease;   
+    -moz-transition:all .2s ease;   
+    -ms-transition:all .2s ease;   
+    transition:all .2s ease;   
+}
+
+.MyButton_red:active{
+    border-radius: 2px;
+    margin-top: 1px;
+}
+
+.MyButton_red:hover{
+    border-radius: 2px;
+    background:#b22222;
+    border:solid 2px #ee2c2c;
+
+}
+
+.MyButton_red:enabled{
+    border-radius: 2px;
+    outline: none !important;
+}
+
+
 .MyButton_blue{
 
     background: #4876ff;
@@ -293,11 +332,48 @@ h1,h2,h3,h4,h5,#reloj{
 
 .MyButton_blue:hover{
     border-radius: 2px;
-    background:#0066cc;
+    background:#104e8b;
     border:solid 2px #4876ff;
 }
 
 .MyButton_blue:enabled{
+    border-radius: 2px;
+    outline: none !important;
+}
+
+
+.MyButton_yellow{
+
+    background: #FFA500;
+    color: whitesmoke;
+    height: 35px;
+    width: 130px;
+    padding: 5px;
+    border:solid 2px #FFA500;
+    /*    border-bottom: solid 3px #0066cc;*/
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 17px;
+
+    -webkit-transition:all .2s ease;  
+    -o-transition:all .2s ease;   
+    -moz-transition:all .2s ease;   
+    -ms-transition:all .2s ease;   
+    transition:all .2s ease;   
+}
+
+.MyButton_yellow:active{
+    border-radius: 2px;
+    margin-top: 1px;
+}
+
+.MyButton_yellow:hover{
+    border-radius: 2px;
+    background:#cd950c;
+    border:solid 2px #FFA500;
+}
+
+.MyButton_yellow:enabled{
     border-radius: 2px;
     outline: none !important;
 }
