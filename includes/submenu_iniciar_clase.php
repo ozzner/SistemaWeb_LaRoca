@@ -8,12 +8,15 @@
     </head>
     <body>
         <div id="submenu_usuario_content">
-            <ul class="nav_list" id="gestion_usuario">
+            <ul class="nav_list" id="gestion_iniciar_clase">
                 <li>
-                    <a href="#">Alumno</a>
+                    <a href="?execute=opcion2">Home</a>
                 </li>
                 <li>
-                    <a href="#">Profesor</a>
+                    <a href="?execute=opcion2-1">Asistencia</a>
+                </li>
+                <li>
+                    <a href="?execute=opcion2-2">Participación</a>
                 </li>
             </ul>
         </div>

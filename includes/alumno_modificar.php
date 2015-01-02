@@ -107,14 +107,14 @@ if ($_REQUEST["usuarioID"] !== "undefined" AND $_REQUEST["usuarioID"] !== "") {
                             <div class="agrupar">
                                 <select required="true" name="grupo" class="MyDropdown" onclick="display_usgs_change()" data-toggle="tooltip" data-placement="top" title="Grupo al que pertenece">
                                     <?php foreach ($grupos as $key => $value) { ?>
-                                        <option value="<?php echo $value['grupoID']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
+                                        <option value="<?php echo $value['grupoID']; ?>"><?php echo ($value['nombre']); ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
                             <div class="agrupar">
                                 <select required="true" name="distrito"  class="MyDropdown" data-toggle="tooltip" data-placement="top" title="¿En qué distrito vive?">
                                     <?php foreach ($distritos as $key => $value) { ?>
-                                        <option value="<?php echo $value['distritoID']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
+                                        <option value="<?php echo $value['distritoID']; ?>"><?php echo ($value['nombre']); ?></option>
                                     <?php } ?>
 
                                 </select>

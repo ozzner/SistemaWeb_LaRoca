@@ -5,12 +5,11 @@
 
 #enseñanza_main_content{
     /*background: red;*/
-    text-align: center;
     padding-top: 20px;
 }
 
 
-#ens_en_proceso,#ens_terminado{
+#ens_en_proceso,#ens_terminado,#ens_tema{
     display: inline-block;
     vertical-align: top;
     height: 350px !important;
@@ -26,6 +25,12 @@
 
 }
 
+#ens_tema{
+    width: 99%;
+    height: 480px !important;
+    padding: 20px;
+    display: block !important;
+}
 
 #ens_en_proceso{
     padding: 10px;
@@ -41,7 +46,7 @@
 #ens_historial{
     display: inline-block;
     vertical-align: top;
-    height: 350px !important;
+    height: 430px !important;
     background: white !important;
     /*border: 1px solid rgba(147, 184, 189,0.8);*/
     border: 1px solid rgba(80, 80, 80,0.2);
@@ -75,6 +80,10 @@ tbody {
     border-bottom: 2px solid rgba(80, 80, 80,0.2);
     border-left:  2px solid rgba(80, 80, 80,0.2);
     border-right: 2px solid rgba(80, 80, 80,0.2);
+}
+
+#tb_historial tbody{
+    height: 320px !important;
 }
 
 /*tbody td, thead th {
@@ -154,15 +163,10 @@ tbody .cell_c{
 
 .row_a_2{
     width: 32%;
-    text-align: left !important;
-    padding-left: 30px;
-    padding-right: 0px;
     /*background: orangered;*/
 }
 .row_b_2{
-    padding-left: 7px;
-    padding-right:7px;
-    width: 19%;
+    width: 17%;
 }
 
 .row_c_2{
@@ -172,32 +176,34 @@ tbody .cell_c{
 }
 tbody .cell_a_2{
     width: 28%;
-    text-align: left;
-    padding-left: 10px;
 }
 
 tbody .cell_b_2{
-    padding-right:10px;
     width: 16%;
-    text-align: left;
-    padding-left:10px;
+
 }
 
 tbody .cell_c_2{
-    padding-left: 10px;
-    padding-right:10px;
+    padding-left: 5px;
+    padding-right:15px;
     width: 15%;
     text-align: center;
 }
 
 .row_a_3{
-    width:20%;
-    padding-left:10px;
-    padding-right:10px;
+    width:22%;
+
 }
+
 .row_b_3{
     padding-left: 10px;
     padding-right:10px;
+    width: 12%;
+}
+
+.row_b_3_1{
+    padding-left: 20px;
+    padding-right:20px;
     width: 12%;
 }
 
@@ -208,19 +214,18 @@ tbody .cell_c_2{
 }
 
 tbody .cell_a_3{
-    width:18.9%;
-    padding-left:2px;
-    padding-right:2px;
+    width:22%;
+
 }
 
 tbody .cell_a_3_1{
-    width:17%;
+    width:15%;
     padding-left:2px;
     padding-right:2px;
 }
 
 tbody .cell_b_3{
- 
+
     width: 11.5%;
 }
 
@@ -230,8 +235,8 @@ tbody .cell_c_3{
     width: 7%;
 }
 tbody .cell_d_3{
-    padding-left: 28px;
-    padding-right:5px;
+    padding-left: 40px;
+    padding-right:15px;
     text-align: right;
 }
 
@@ -301,13 +306,13 @@ tbody .cell_d_3{
 }
 
 #acc_eliminar,#acc_terminar{
-       width: 90%;
+    width: 90%;
 }
 /********** submenu *********/
 
 #gestion_enseñanza {
     background: #888;
-    width: 280px;
+    width: 417px;
     /*border-top-right-radius: 2em;*/
     /*border-bottom-right-radius: 3em;*/
 }
@@ -318,6 +323,103 @@ tbody .cell_d_3{
     margin-top:4px;
     border-bottom: solid 4px white;
     margin-left: -1.8px;
+}
+
+/********** TEMAS  *********/
+
+
+#ens_tem_subcontent1,#ens_tem_subcontent2{
+    display: inline-block !important;
+    /*background: red;*/
+    height: 435px;
+}
+
+#ens_tem_subcontent1{
+    width: 33%;
+}
+
+#ens_tem_subcontent2{
+    float: right;
+    width:66%;
+    /*background: yellow;*/
+}
+
+#ens_tem_form_2{
+    width: 100%;
+    /*background: orange;*/
+    position: relative;
+    /*    top: 28px;*/
+    text-align: center;
+}
+
+#ens_tem_subcontent2 #ens_tem_form_1{
+    width: 100%;
+    /*background: orange;*/
+    position: relative;
+    /*    top: 28px;*/
+    text-align: center;
+
+}
+
+#ens_tem_btn_2,#ens_tem_btn_1,#ens_tem_name,#ens_tem_descri,#ens_tem_id{
+    width: 90%;
+}
+
+#ens_tem_descri{
+    padding: 10px;
+    outline: none;
+    border:solid 2px #ddd;
+    height: 80px;
+    text-align: justify;
+
+}
+#lista_ense,#lista_tema{
+    border: solid 7px #ddd;
+    width: 100%;
+    background: whitesmoke;
+    outline: none !important;
+    /*padding-right: 10px;*/
+    color: gray;
+    border-radius: 0.5em;
+  
+}
+
+#lista_tema option,#lista_ense option{
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+}
+
+#lista_tema{
+    height: 200px;
+}
+#lista_ense{
+    height: 140px;
+}
+
+#ens_tem_cont_tit{
+    width: 100%;
+    height: 30px;
+    /*background: blue;*/
+}
+#ens_tem_tit2,#ens_tem_count1,#ens_tem_count2{
+    display: inline-block;
+}
+
+#ens_tem_tit2{
+    /*background: yellow;*/
+    width: auto;
+    font-size: 15px;
+    margin-left:15px;
+}
+
+#ens_tem_count1,#ens_tem_count2{
+    /*background:red;*/
+    color: orangered;
+    width:12%;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 15px;
 }
 
 

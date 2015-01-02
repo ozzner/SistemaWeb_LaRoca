@@ -1,11 +1,10 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);
 include_once '../controller/controller_ensenanza.php';
 
 $oEnse = new EnsenanzaController();
 $enseñanzas = $oEnse->getAllDataByEstado(0);
 $enseñanzas2 = $oEnse->getAllDataByEstado(1);
-
+//var_dump($enseñanzas2);
 if (isset($_REQUEST["isError"])) {
 
     $message = $_REQUEST["message"];
@@ -23,15 +22,15 @@ if (isset($_REQUEST["isError"])) {
         <link href="../css/css_general.css" rel="stylesheet" type="text/css"/>
         <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="../css/css_enseñanza.css" rel="stylesheet" type="text/css"/>
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
     </head>
-    <body style="background: rgba(185,185,185,0.2);">
+    <body style="background: rgba(185,185,185,0.1);">
         <div class="MyContents" id="enseñanza_main_content">
 
 
             <div id="ens_en_proceso">
                 <div class="ens_titulo">
-                    <span>ENSEÑANZAS PENDIENTES</span>
+                    <span>ENSEÑANZAS PENDIENTES - (ESTADO: 0)</span>
                 </div>
 
                 <table  class="MyTable">
@@ -45,13 +44,15 @@ if (isset($_REQUEST["isError"])) {
                     </thead>
 
                     <tbody>
-                        <?php foreach ($enseñanzas as $key => $values) { ?>
-                            <tr>
-                                <td class="cell_a"><?php echo utf8_encode($values["nombre"]) ?></td>
-                                <td class="cell_b"><?php echo utf8_encode($values["fechaInicio"]) ?></td>
-                                <td class="cell_b"><?php echo $values["fechaFin"] ?></td>
-                                <td class="cell_c"><a id="iniciar_click" href="../includes/ensenanza_actualizar.php?controller=1&id=<?php echo ($values[utf8_decode("enseñanzaID")]); ?>"><img class="img_32" src="../resources/img/warning_3.png"/></a></td>
-                            </tr>
+                        <?PHP if (is_array($enseñanzas)) { ?>
+                            <?php foreach ($enseñanzas as $key => $values) { ?>
+                                <tr>
+                                    <td class="cell_a"><?php echo ($values["nombre"]) ?></td>
+                                    <td class="cell_b"><?php echo ($values["fechaInicio"]) ?></td>
+                                    <td class="cell_b"><?php echo $values["fechaFin"] ?></td>
+                                    <td class="cell_c"><a title="¡Click aqui para iniciar!"id="iniciar_click" href="../includes/ensenanza_actualizar.php?controller=1&id=<?php echo ($values[utf8_decode("ensenanzaID")]); ?>"><img class="img_32" src="../resources/img/warning_3.png"/></a></td>
+                                </tr>
+                            <?php } ?>
                         <?php } ?>
                     </tbody>
                 </table>
@@ -60,36 +61,40 @@ if (isset($_REQUEST["isError"])) {
 
             <div id="ens_terminado">
                 <div class="ens_titulo">
-                    <span>ENSEÑANZAS EN PROCESO</span>
+                    <span>ENSEÑANZAS EN PROCESO - (ESTADO: 1)</span>
                 </div>
-                <table  class="MyTable">
+                <table  class="MyTable" id="tb_terminar">
                     <thead>
                         <tr>
-                            <th  class="row_a_2">NOMBRE</th>
+                            <th  class="row_a_2" style="width: 34.3%;">NOMBRE</th>
                             <th  class="row_b_2">INICIO</th>
                             <th  class="row_b_2">FINAL</th>
-                            <th  class="row_a_2">CREADO_POR</th>
-                            <th  class="row_c_2">EDITAR</th>
+                            <th  class="row_a_2">A_CARGO_DE</th>
+                            <th  class="row_c_2" style="width: 30%;">EDITAR</th>
                             <th  class="row_c_2">TERMINAR</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <?php foreach ($enseñanzas2 as $key => $value) { ?>
-                            <tr>
-                                <td class="cell_a_2"><?php echo utf8_encode($value["nombre"]) ?></td>
-                                <td class="cell_b_2"><?php echo utf8_encode($value["fechaInicio"]) ?></td>
-                                <td class="cell_b_2" style="text-align: left;"><?php echo $value["fechaFin"] ?></td>
-                                <td class="cell_a_2" style="text-align: left;"><?php echo utf8_encode($value["creadoPor"]) ?></td>
-                                <td class="cell_c_2" ><a href="#" onclick="getId(this);" data-toggle="modal" data-target="#MyModal_edit" ><img style="width: 17px;height: 17px;" src="../resources/img/edit.png"/></a></td>
-                                <td class="cell_c_2" ><a href="#" onclick="getId(this);" data-toggle="modal" data-target="#MyModal_terminar"  ><img id="ens_end" class="img_32"  src="../resources/img/warning_1.png"/></a></td>
-                                <td hidden="true" id="ids"><?php echo utf8_encode($value[utf8_decode("enseñanzaID")]) ?></td>
-                            </tr>
+                        <?PHP if (is_array($enseñanzas2)) { ?>
+                            <?php foreach ($enseñanzas2 as $key => $value) { ?>
+                                <tr>
+                                    <td class="cell_a_2" style="width: 28.5%;"><?php echo ($value["nombre"]) ?></td>
+                                    <td class="cell_b_2"><?php echo ($value["fechaInicio"]) ?></td>
+                                    <td class="cell_b_2"><?php echo $value["fechaFin"] ?></td>
+                                    <td class="cell_a_2" style="width: 28.3%;" ><?php echo ($value["creadoPor"]) ?></td>
+                                    <td class="cell_c_2" style="widht: 3% !important; padding-left:2px;padding-right: 25px;" title="¡Editar enseñanza!" ><a href="#" onclick="getValues(this);" data-toggle="modal" data-target="#MyModal_edit" ><img style="width: 17px;height: 17px;" src="../resources/img/edit.png"/></a></td>
+                                    <td class="cell_c_2" style="padding-left: 5px;padding-right: 5px;"><a href="#" onclick="getId(this);" title="¡Click para terminar!" data-toggle="modal" data-target="#MyModal_terminar"  ><img id="ens_end" class="img_32"  src="../resources/img/warning_1.png"/></a></td>
+                                    <td hidden="true" id="ids"><?php echo ($value[utf8_decode("ensenanzaID")]) ?></td>
+                                </tr>
+                            <?php } ?>  
                         <?php } ?>  
                     </tbody>
-                </table>
 
+                </table>
             </div>
+
+
             <div id="ens_button">
                 <input type="button" value="Nueva enseñanza" data-toggle="modal" data-target="#MyModal2"  class="MyButton_green"/>
             </div>
@@ -109,7 +114,7 @@ if (isset($_REQUEST["isError"])) {
                         </div>
                         <div class="modal-body">
                             <div id="ens_pop_titulo" > <img src="../resources/img/done.png"></div><br>
-                           
+
                             <form method="POST" action="../includes/ensenanza_crear.php">
                                 <input name="nombre" type="text" style="width: 90%" class="MyInput" placeholder="Nombre de la enseñanza" required="true"  data-toggle="tooltip" data-placement="right" title="Nombre de la enseñanza"/><br>
                                 <input name="fecha_inicio" type="date" style="width: 90%" class="MyInput" required="true"  data-toggle="tooltip" data-placement="left" title="Inicio de la enseñanza"/><br>
@@ -167,10 +172,12 @@ if (isset($_REQUEST["isError"])) {
                 <div class="modal-body">
                     <div  > <img style="width: 32px;height: 32px;"src="../resources/img/information.png"></div><br>
 
-                    <form >
-                        <input disabled="true" name="nombre" type="text" style="width: 90%" class="MyInput" placeholder="Nombre de la enseñanza" required="true"  data-toggle="tooltip" data-placement="right" title="Nombre de la enseñanza"/><br>
-                        <input disabled="true" name="fecha_inicio" type="date" style="width: 90%" class="MyInput" required="true"  data-toggle="tooltip" data-placement="left" title="Inicio de la enseñanza"/><br>
-                        <input disabled="true" name="fecha_fin" type="date" style="width: 90%" class="MyInput"  data-toggle="tooltip" data-placement="right" title="Fecha fin (Opcional)" /><br><br>
+                    <form id="form_ens_edit" method="POST" action="../includes/ensenanza_actualizar.php">
+                        <input id="idEns" disabled="true" name="id_ens" type="text" style="width: 90%" class="MyInput" placeholder="Nombre de la enseñanza" required="true"  data-toggle="tooltip" data-placement="right" title="Código de enseñanza"/><br>
+                        <input id="nombre"  name="nombre" type="text" style="width: 90%" class="MyInput" placeholder="Nombre de la enseñanza" required="true"  data-toggle="tooltip" data-placement="right" title="Nombre de la enseñanza"/><br>
+                        <input id="inicio"  name="fecha_inicio" type="date" style="width: 90%" class="MyInput" required="true"  data-toggle="tooltip" data-placement="left" title="Inicio de la enseñanza"/><br>
+                        <input id="fin" name="fecha_fin" type="date" style="width: 90%" class="MyInput"  data-toggle="tooltip" data-placement="right" title="Fecha fin (Opcional)" /><br><br>
+                        <input id="creado" disabled="true" name="creado_por" type="text" style="width: 90%" class="MyInput"  data-toggle="tooltip" data-placement="right" title="Enseñanza creada por:" /><br><br>
                         <input value="Actualizar" type="submit" id="ens_btn_submit" class="MyButton_blue" required="true"/><br>
                     </form>
                 </div>
@@ -223,25 +230,43 @@ if (isset($_REQUEST["isError"])) {
 </script>
 
 <script>
+    function getValues(id) {
+        var myId = $(id).parent().siblings(":last").text();
+        var nombre = $(id).parent().siblings().eq(0).text();
+        var inicio = $(id).parent().siblings().eq(1).text();
+        var fin = $(id).parent().siblings().eq(2).text();
+        var creado = $(id).parent().siblings().eq(3).text();
+
+        console.log("ID:" + myId + "nombre:" + nombre + "inicio:" + inicio + "fin:" + fin + "creado:" + creado);
+
+        $("#idEns").val(myId);
+        $("#nombre").val(nombre);
+        $("#inicio").val(inicio);
+        $("#fin").val(fin);
+        $("#creado").val(creado);
+
+    }
+</script>
+
+<script>
     function getId(id) {
         var myId = $(id).parent().siblings(":last").text();
         $("#MyId").text(myId);
     }
 </script>
 
-
 <script>
     $(document).ready(function () {
-
-        var path = $("#form_ens_term").attr('action');
-        var method = $("#form_ens_term").attr('method');
 
 //            var json = $("#form_ens_term").serialize();
 
 
         $("#form_ens_term").submit(function (e) {
+            var path = $("#form_ens_term").attr('action');
+            var method = $("#form_ens_term").attr('method');
             var id = $("#MyId").html();
-//            alert(id);
+
+//            alert(path + " path");
             e.preventDefault();
 
             $.ajax({
@@ -249,6 +274,40 @@ if (isset($_REQUEST["isError"])) {
                 url: path,
                 data: {id: id, controller: 2},
                 success: function (response) {
+//                $( "#contact-edit" ).dialog("close");
+                    location.reload();
+                    console.log(response)
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                    console.log(jqXHR);
+                }
+
+            }); // Ajax Call
+        });
+
+
+        $("#form_ens_edit").submit(function (e) {
+            var path = $("#form_ens_edit").attr('action');
+            var method = $("#form_ens_edit").attr('method');
+//            var json = $("#form_ens_term").serialize();
+            var id = $("#idEns").val();
+            var name = $("#nombre").val();
+            var start = $("#inicio").val();
+            var end = $("#fin").val();
+//            var created = $("#creado").val();
+
+//            alert(id);
+            e.preventDefault();
+
+            $.ajax({
+                type: method,
+                url: path,
+                data: {controller: 0, id: id, nombre: name, inicio: start, fin: end},
+                success: function (response) {
+//                $( "#contact-edit" ).dialog("close");
+                    location.reload();
                     console.log(response)
                 },
                 error: function (jqXHR, textStatus, errorThrown) {

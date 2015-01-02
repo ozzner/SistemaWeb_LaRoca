@@ -16,17 +16,26 @@ if (isset($_REQUEST["id"]) and isset($_REQUEST["controller"])) {
 
     $enseñanzaID = $_REQUEST["id"];
     $controller = $_REQUEST["controller"];
-
+    $fechaInicio = $_REQUEST["inicio"];
+    $fechaFin = $_REQUEST["fin"];
+    $nombre = utf8_decode($_REQUEST["nombre"]);
 
     session_start();
     $MySession = unserialize($_SESSION["profesor"]);
 //    var_dump($MySession);
-    $nombre = $MySession->getNombres();
-    var_dump($nombre);
-    var_dump($enseñanzaID);
+    $creadoPor = utf8_decode($MySession->getNombres());
+    $terminadoPor = utf8_decode($MySession->getNombres());
+//    
+//    var_dump($nombre);
+//    var_dump($enseñanzaID);
+//    var_dump($controller);
+//    var_dump($fechaInicio);
+//    var_dump($fechaFin);
+//    var_dump($creadoPor);
+//    var_dump($terminadoPor);
 
     $oEns = new EnsenanzaController();
-    $oEns->updateEnsenanza($nombre, $controller, $enseñanzaID);
+    $oEns->updateEnsenanza($fechaInicio, $fechaFin, $nombre, $creadoPor, $controller, $terminadoPor, $enseñanzaID);
     $isError = $oEns->getError();
     $mensaje = $oEns->getMessage();
 

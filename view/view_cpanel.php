@@ -2,7 +2,7 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE);
 
-/***** Includes *****/
+/* * *** Includes **** */
 include_once '../includes/admin_content.php';
 include_once '../handler/handler_sesiones.php';
 include_once '../model/model_profesor.php';
@@ -16,8 +16,6 @@ if (!$active) {
     header("Location: index.php?message=Su sessión ha expirado");
     exit();
 }
-
-
 ?>
 
 <html>
@@ -31,9 +29,12 @@ if (!$active) {
         <!-- Custom CSS -->
         <link href="../css/simple-sidebar.css" rel="stylesheet">
         <script src="../vendor/DataTable/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+
+    <!-- Fonts Awesone -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">    
         <title><?php echo $titulo; ?></title>
     </head>
-    
+
     <body onload="startTime()">
 
         <header>
@@ -45,19 +46,19 @@ if (!$active) {
                 <?php
                 $MySession = unserialize($_SESSION["profesor"]);
 //                var_dump($MySession);
-                $name = utf8_encode($MySession->getNombres());
+                $name = ($MySession->getNombres());
                 $cod = $MySession->getProfesorID();
                 ?>
-                <label id="profesorID"><?php echo "$name - Cod[00$cod]"; ?></label><br>
+                <label id="profesorID"><?php echo "$name  -  Cod [00$cod]"; ?></label><br>
                 <span id="reloj"></span>
             </div>
 
             <div id="content_logut">
 
                 <select class="MyDropdown" id="session" onclick="display_usgs_change()">
-                    <option value="profesor"><?php echo $session->getSession_name(); ?></option>
-                    <option value="perfil">Perfil</option>
-                    <option value="salir" >Cerrar sesión</option>
+                    <option id="spin_name" value="profesor"><?php echo $session->getSession_name(); ?></option>
+                    <option id="spin_user" value="perfil"> Perfil</option>
+                    <option id="spin_session" value="salir" >Cerrar sesión</option>
                 </select>
 
             </div>
@@ -88,6 +89,7 @@ if (!$active) {
             <div id="wrapper">
 
                 <div id="sidebar-wrapper">
+
                     <ul class="sidebar-nav">
                         <li>
                             <a id="opcion0" href="?execute=opcion0">Inicio</a>
@@ -95,11 +97,11 @@ if (!$active) {
                         <li>
                             <a id="opcion1" href="?execute=opcion1">Gestión de usuarios</a>
                         </li>
-                        <li>
-                            <a id="opcion2" href="?execute=opcion2">Iniciar clase</a>
+                        <li>        
+                            <a id="opcion3" href="?execute=opcion3">Enseñanzas</a>
                         </li>
                         <li>
-                            <a id="opcion3" href="?execute=opcion3">Enseñanzas</a>
+                            <a id="opcion2" href="?execute=opcion2">Iniciar clase</a>
                         </li>
                         <li>
                             <a href="#">Análisis y búsqueda</a>

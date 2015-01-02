@@ -79,12 +79,12 @@ tbody tr:hover{
 thead,tfoot{
     background: #888 !important;
     color: white;
-   
+
     height: 12px !important;
 }
 
 th{
-     font-weight:normal !important;
+    font-weight:normal !important;
 }
 
 
@@ -97,8 +97,8 @@ th{
     font-weight: normal;
 }
 
-h1,h2,h3,h4,h5,#reloj{
-    font-family: 'ubuntu_monoregular';
+h1,h2,h3,h4,h5,#reloj,.numbers,textArea{
+    font-family: 'ubuntu_monoregular' !important;
     color:#CD6090;
 }
 
@@ -189,11 +189,11 @@ h1,h2,h3,h4,h5,#reloj{
 }
 
 .MyTable tr:nth-child(even) { /*(even) or (2n 0)*/
-	background:rgba(185,185,185,0.15);
+    background:rgba(185,185,185,0.15);
 }
 
 .MyTable tr:nth-child(odd) { /*(odd) or (2n 1)*/
-	
+
 }
 
 
@@ -410,7 +410,7 @@ input:invalid {
     border: 2px solid blue;
 }
 
-input:disabled{
+input:disabled,input:read-only{
     cursor: no-drop !important;
     background: #ddd !important;
     color:gray;
@@ -420,6 +420,7 @@ input:disabled{
     padding: 0;
     border: solid 2px #b9b9b9 !important;
 }
+
 
 
 
@@ -464,4 +465,15 @@ input:disabled{
     color: #D63301 !important;
     background-color: #FFCCBA !important;
     background-image: url('img/validation.png') !important;
+}
+
+.MyReadOnly{
+    cursor: no-drop !important;
+    background: #ddd !important;
+    color:gray;
+    text-align: center;
+    opacity: 0.6;
+    width: 60px;
+    padding: 0;
+    border: solid 2px #b9b9b9 !important;
 }

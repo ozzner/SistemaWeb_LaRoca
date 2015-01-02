@@ -12,6 +12,8 @@ class Mysql_Conexion {
     function __construct() {
 
         require_once dirname(__FILE__) . './database_configurations.php';
+        include_once '../util/util_constants.php';
+        
         $this->isError = NULL;
         $this->message = NULL;
     }
@@ -22,37 +24,40 @@ class Mysql_Conexion {
             Mysql_Conexion::$connection = new mysqli(MySQL_DB_HOST, MySQL_DB_USER, MySQL_DB_PASS, MySQL_DB_NAME);
 
             if (Mysql_Conexion::$connection->connect_errno) {
+
                 $this->errorCode = mysqli_errno(Mysql_Conexion::$connection);
                 $this->isError = TRUE;
-                $this->message = "Se presento el siguiente error. " . mysqli_connect_error();
+                $this->message = CONNECTION_FAILED . mysqli_connect_error();
             } else {
+
                 $this->isError = FALSE;
-                $this->message = "¡Conexión exitosa!";
+                $this->message = CONNECTION_SUCCESS;
             }
-            
         } catch (Exception $exc) {
-            throw  $exc;
+            throw $exc;
             $this->isError = TRUE;
             $this->message = $exc->getMessage();
         }
-        
-         return  Mysql_Conexion::$connection;
+     
+           return Mysql_Conexion::$connection;
+  
+       
     }
 
-    
     public function setQuery($query) {
-        $array = array();
+         $output = array();
         
         try {
             if (isset($query)) {
 
                 if ($r = Mysql_Conexion::$connection->query($query)) {
+                  
                     while ($row = $r->fetch_assoc()) {
-                        $array[] = $row;
+                         $output[]=array_map("utf8_encode", $row);
                     }
-//                    var_dump($array);
-                    
-                    if ($array == NULL) {
+
+
+                    if ($output == NULL) {
                         $this->isError = TRUE;
                         $this->message = "nulo";
                     } else {
@@ -61,13 +66,14 @@ class Mysql_Conexion {
                     }
 
                     $r->free();
-                    
                 } else {
+
                     $this->messaje = 'Error en lectura de datos <br>';
                     $this->isError = TRUE;
                 }
-            }else{
-                 $this->messaje = 'Query Vacio o nulo';
+            } else {
+
+                $this->messaje = 'Query vacio o nulo';
             }
         } catch (Exception $ex) {
 
@@ -76,7 +82,7 @@ class Mysql_Conexion {
             $array = NULL;
         }
 
-        return $array;
+        return $output;
     }
 
     public function closeConnection() {
@@ -93,11 +99,12 @@ class Mysql_Conexion {
     public function getError() {
         return $this->isError;
     }
+
     function getErrorCode() {
         return $this->errorCode;
     }
 
-        public function getConnection() {
+    public function getConnection() {
         return Mysql_Conexion::$connection;
     }
 

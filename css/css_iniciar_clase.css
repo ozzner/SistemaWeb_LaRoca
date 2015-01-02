@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26/12/2014, 10:43:58 PM
+    Author     : Renzo Santillán
+*/
+
+
+/********** submenu *********/
+
+#gestion_iniciar_clase {
+    background: #888;
+    width: 433px;
+    /*border-top-right-radius: 2em;*/
+    /*border-bottom-right-radius: 3em;*/
+}
+
+#gestion_iniciar_clase li a{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top:4px;
+    border-bottom: solid 4px white;
+    margin-left: -1.8px;
+}
+#iniciar_clase_main_content{
+    /*background: red;*/
+    padding-top: 20px;
+}

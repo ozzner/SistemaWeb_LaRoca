@@ -1,5 +1,11 @@
 <?php
 
+/*+++++++++++++ MYSQL_CONNECTION +++++++++++++*/
+define('CONNECTION_FAILED', "Error en la conexión al servidor.");
+define('CONNECTION_SUCCESS', "Conexión existosa.");
+
+
+
 /*+++++++++++++ USUARIO +++++++++++++*/
 define('USER_CREATED', "¡Usuario creado correctamente!");
 define('USER_UPDATED', "¡Usuario actualizado correctamente!");
@@ -14,6 +20,20 @@ define('TEACHING_CREATED', "¡Enseñanza creada correctamente!");
 define('TEACHING_FAILED_CREATED', "¡Error al crear la enseñanza!");
 define('TEACHING_UPDATED', "¡Se ha iniciado la enseñanza!");
 define('TEACHING_FAILED_UPDATED', "¡No se pudo iniciar la enseñañza!");
+define('TEACHING_DELETED', "¡Enseñanza eliminada correctamente!");
+define('TEACHING_FAILED_DELETED', "¡Error al eliminar la enseñanza!");
+define('GETDATA_FAILED', "¡Error al traer datos!");
+
+
+/*+++++++++++++ TEMA +++++++++++++*/
+define('THEME_CREATED', "¡Tema creado correctamente!");
+//define('TEACHING_FAILED_CREATED', "¡Error al crear la enseñanza!");
+//define('TEACHING_UPDATED', "¡Se ha iniciado la enseñanza!");
+//define('TEACHING_FAILED_UPDATED', "¡No se pudo iniciar la enseñañza!");
+//define('TEACHING_DELETED', "¡Enseñanza eliminada correctamente!");
+//define('TEACHING_FAILED_DELETED', "¡Error al eliminar la enseñanza!");
+//define('GETDATA_FAILED', "¡Error al traer datos!");
+
 
 
 

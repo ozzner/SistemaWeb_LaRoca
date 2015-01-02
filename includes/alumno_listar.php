@@ -49,13 +49,13 @@ $alumnos = $oAlumno->getAllAlumnos();
                     <?php foreach ($alumnos as $key => $value) { ?>
                         <tr>
                             <td ><input class="MyInputRadio" id="alum_id_radio" type="radio" name="alumnoID" value="<?php echo $value["alumnoID"] ?>"/></td>   
-                            <td ><?php echo utf8_encode($value["alumnoID"]) ?></td>
-                            <td ><?php echo utf8_encode($value["nombres"]) ?></td>
+                            <td ><?php echo ($value["alumnoID"]) ?></td>
+                            <td ><?php echo ($value["nombres"]) ?></td>
                             <td ><?php echo $value["telefono"] ?></td>
-                            <td ><?php echo utf8_encode($value["nombrePapa"]) ?></td>
-                            <td ><?php echo utf8_encode($value["nombreMama"]) ?></td>
+                            <td ><?php echo ($value["nombrePapa"]) ?></td>
+                            <td ><?php echo ($value["nombreMama"]) ?></td>
                             <td ><?php echo $value["nacimiento"] ?></td>
-                            <td ><?php echo utf8_encode($value["direccion"]) ?></td>
+                            <td ><?php echo ($value["direccion"]) ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>

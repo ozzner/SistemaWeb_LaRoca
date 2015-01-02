@@ -9,10 +9,13 @@
         <div id="submenu_usuario_content">
             <ul class="nav_list" id="gestion_enseñanza">
                 <li>
-                    <a href="?execute=opcion3">Estado</a>
+                    <a href="?execute=opcion3">Enseñanza</a>
                 </li>
                 <li>
-                    <a href="?execute=opcion4">Historial</a>
+                    <a href="?execute=opcion3-1">Temas</a>
+                </li>
+                <li>
+                    <a href="?execute=opcion3-2">Historial</a>
                 </li>
             </ul>
         </div>

@@ -4,62 +4,63 @@ function startTime() {
     var h = today.getHours();
     var m = today.getMinutes();
     var s = today.getSeconds();
-    var dia = today.getUTCDay();
-    var mes = today.getMonth() + 1;
+    var dia = today.getDate();
+    var mes = today.getMonth();
     var año = today.getFullYear();
 
     switch (mes) {
-        case 1:
-            break;
+        case 0:
             mes = "Ene";
-        case 2:
+             break;
+        case 1:
             mes = "Feb";
             break;
-        case 3:
+        case 2:
             mes = "Mar";
             break;
-        case 4:
+        case 3:
             mes = "Abr";
             break;
-        case 5:
+        case 4:
             mes = "May";
             break;
-        case 6:
+        case 5:
             mes = "Jun";
             break;
-        case 7:
+        case 6:
             mes = "Jul";
             break;
-        case 8:
+        case 7:
             mes = "Ago";
             break;
-        case 9:
+        case 8:
             mes = "Set";
             break;
-        case 10:
+        case 9:
             mes = "Oct";
             break;
-        case 11:
+        case 10:
             mes = "Nov";
             break;
-        case 12:
+        case 11:
             mes = "Dic";
             break;
     }
 
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('reloj').innerHTML = (dia+7)  + "-" + mes + "-" + año + "  " + h + ":" + m + ":" + s;
-    var t = setTimeout(function () {
-        startTime()
-    }, 500);
+    document.getElementById('reloj').innerHTML = dia  + "-" + mes + "-" + año + "  " + h + ":" + m + ":" + s;
+    setTimeout("startTime()",1000);
+//    setInterval(function (){
+//        startTime();
+//    },1000);
 }
 
 function checkTime(i) {
     if (i < 10) {
-        i = "0" + i
+        i = "0" + i;
     }
-    ;  // add zero in front of numbers < 10
+      
     return i;
 }
 
