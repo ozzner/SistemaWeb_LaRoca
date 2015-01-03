@@ -1,8 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : 26/12/2014, 10:43:58 PM
     Author     : Renzo Santillán
@@ -25,7 +20,206 @@ and open the template in the editor.
     border-bottom: solid 4px white;
     margin-left: -1.8px;
 }
+
+
+/********** content *********/
+
 #iniciar_clase_main_content{
-    /*background: red;*/
+    /*background: blue;*/
     padding-top: 20px;
+}
+
+#ini_estado, #ini_info{
+    display: inline-block;
+    vertical-align: top;
+    background: white;
+    border: 1px solid rgba(80, 80, 80,0.2);
+    border-radius: 5px;
+    height: 430px;
+    padding: 20px;
+}
+
+#ini_estado{
+    width: 55%;
+}
+
+#ini_encabezado{
+    /*text-align: center;*/
+    height: 30px;
+    /*background: blue;*/
+    border-bottom: solid 3px #ccc;
+}
+#ini_estado h4{
+    top:5px;
+    position: relative;
+    /*background: yellow;*/
+    margin: 0 auto;
+    font-size:15px;
+
+}
+
+#ini_estado span, #ini_estado h4{
+    display: inline-block;
+    vertical-align: top;
+}
+
+#ini_sel_tema{
+    height: 45px;
+    /*background: yellow;*/
+}
+
+#ini_dropdown,#ini_buttons{
+    display: inline-block;
+    vertical-align: top;
+}
+#ini_buttons{
+    height: 45px;
+    /*background:blue;*/
+    float: right;
+}
+
+#ini_dropdown{
+    width: 56.5%;
+    /*background: pink;*/ 
+    font-size: 16px;
+    height: 45px !important;
+    margin: 0px !important;
+}
+
+#ini_buttons input{
+    height: 45px !important;
+}
+
+#int__timer{
+    width: 100%;
+    /*background: red;*/
+    height: 30px;
+}
+#int__timer2{
+    width: 100%;
+    height: 40px;
+}
+
+
+#ini_hora,#ini_min,#int_tiempo_res,#ini_message,#ini_message2{
+    height: 30px;
+    width: 54px;
+    text-align: center;
+    padding: 1px;
+    /*    vertical-align: top;
+        display: inline-block;*/
+}
+
+#int_tiempo_res{
+    width:40px;
+    padding: 5px !important;
+    /*vertical-align: top;*/
+    border-radius: 1em;
+    margin: 0px;
+    /*background: blue;*/
+    font-size: 15px !important;
+    margin-left: 50px;
+    color: blue;
+    /*margin-left: 8px;*/
+}
+
+#ini_message,#ini_message2{
+    border-radius: 1em;
+    width: 230px;
+    padding: 5px !important;
+    font-size: 15px !important;
+    height: 30px !important;
+    margin: 0 auto;
+    float: right;
+    margin-right: 15px;
+}
+
+#ini_message2{
+    width: 180px; 
+    margin-right: 45px;
+}
+
+#ini_info{
+
+    width: 44%;
+}
+#ini_encabezado2 {
+    /*background: red;*/
+    height: 30px;
+    border-bottom: solid 3px #ccc;
+}
+
+#ini_encabezado2 h4{
+    top:5px;
+    position: relative;
+    /*background: yellow;*/
+    margin: 0 auto;
+    font-size:15px;
+}
+.ini_row{
+    /*background: red;*/
+    height: 20px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 3px;
+    display: inline-block;
+    vertical-align: top;
+}
+.numbers{
+    /*color:red;*/
+    float: right;
+    font-size: 14px;
+    /*background: blue;*/
+}
+.ini_participacion,.numbers{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.ini_participacion{
+    /*color: blue;*/
+    height: 20px;
+    /*background: violet;*/
+    font-size: 15px;
+    padding-bottom: 2px;
+}
+
+#init__notas{
+    width: 100%;
+    /*background: yellow;*/
+    height: 44px;
+}
+
+#int_inp_agregar{
+    height: 40px;
+    width: 60%;
+    float: left; 
+
+}
+
+#int_btn_agregar{
+    top:2px;
+    position: relative;
+    height: 40px;
+    width: 39%;
+    float: right; 
+    margin: 0px;
+}
+
+#init_lista{
+    height: 183px;
+    padding: 2px;
+    /*background: red;*/
+    /*border: solid 1px #b9b9b9;*/
+    width: 100%;
+}
+
+#init_lis_recordar{
+    border:solid 5px #b9b9b9;
+    border-radius: 0.5em;
+    width: 100%;
+    padding-left: 10px !important;
+    padding: 2px;
+    outline: none !important;
 }

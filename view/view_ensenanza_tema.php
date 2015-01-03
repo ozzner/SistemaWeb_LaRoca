@@ -32,7 +32,7 @@ $enseñanzas_1 = $data["data"];
                 <div id="ens_tem_subcontent1">
 
                     <div id="ens_tem_cont_tit">
-                        <h5 id="ens_tem_tit2">Total de enseñanzas:</h5><span id="ens_tem_count1" class="numbers">
+                        <h4 id="ens_tem_tit2">Total de enseñanzas:</h4><span id="ens_tem_count1" class="numbers">
 
                             <?PHP
                             if (is_array($enseñanzas_1)) {
@@ -161,6 +161,7 @@ $enseñanzas_1 = $data["data"];
 
                 $("#lista_ense").change(function () {
                     $("#ens_tem_btn_1").prop("disabled", false);
+                    $("#ens_tem_btn_2").prop("disabled", true);
                     var id = $(this).val();
                     var text = $("#lista_ense option:selected").text();
                     var path = "../includes/ensenanza_tema_listar.php";

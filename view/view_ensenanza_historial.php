@@ -29,7 +29,7 @@ if (isset($_REQUEST["isError"])) {
 
             <div id="ens_historial">
                 <div class="ens_titulo">
-                    <span>HISTORIAL DE ENSEÑANZAS LA ROCA - (ESTADO: 2)</span>
+                    <span>HISTORIAL DE ENSEÑANZAS LA ROCA - (2: TERMINADO)</span>
                 </div>
                 <table  class="MyTable" id="tb_historial">
                     <thead>

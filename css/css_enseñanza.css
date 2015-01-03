@@ -257,7 +257,7 @@ tbody .cell_d_3{
     width: 45%;
     padding: 5px;
     margin-top: 20px;
-    /*    background: red;*/
+        /*background: red;*/
 }
 
 
@@ -409,8 +409,8 @@ tbody .cell_d_3{
 #ens_tem_tit2{
     /*background: yellow;*/
     width: auto;
-    font-size: 15px;
-    margin-left:15px;
+    font-size: 16px;
+    margin-left:13px;
 }
 
 #ens_tem_count1,#ens_tem_count2{
@@ -420,6 +420,7 @@ tbody .cell_d_3{
     padding-left: 5px;
     padding-right: 5px;
     font-size: 15px;
+ 
 }
 
 

@@ -30,7 +30,7 @@ if (isset($_REQUEST["isError"])) {
 
             <div id="ens_en_proceso">
                 <div class="ens_titulo">
-                    <span>ENSEÑANZAS PENDIENTES - (ESTADO: 0)</span>
+                    <span>ENSEÑANZAS PENDIENTES - (0: CREADO)</span>
                 </div>
 
                 <table  class="MyTable">
@@ -61,7 +61,7 @@ if (isset($_REQUEST["isError"])) {
 
             <div id="ens_terminado">
                 <div class="ens_titulo">
-                    <span>ENSEÑANZAS EN PROCESO - (ESTADO: 1)</span>
+                    <span>ENSEÑANZAS EN PROCESO - (1: INICIADO)</span>
                 </div>
                 <table  class="MyTable" id="tb_terminar">
                     <thead>
@@ -156,7 +156,7 @@ if (isset($_REQUEST["isError"])) {
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->  
 
-    </div>
+<!--    </div>-->
 
 
 
@@ -189,7 +189,7 @@ if (isset($_REQUEST["isError"])) {
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->  
 
-</div>
+<!--</div>-->
 
 
 

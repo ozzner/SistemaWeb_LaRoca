@@ -92,12 +92,12 @@ th{
 /*(102,153,255)*/
 /************* GENERAL FONTS ***************/
 
-#content_clock #profesorID{
+h1,h2,h3,h4,h5,#content_clock #profesorID{
     font-family: 'PT Sans Narrow';
     font-weight: normal;
 }
 
-h1,h2,h3,h4,h5,#reloj,.numbers,textArea{
+#reloj,.numbers,textArea{
     font-family: 'ubuntu_monoregular' !important;
     color:#CD6090;
 }
@@ -105,8 +105,10 @@ h1,h2,h3,h4,h5,#reloj,.numbers,textArea{
 #sidebar-wrapper .sidebar-nav li a{
     font-family: 'PT Sans Narrow';
     font-size: 17px;
-
 }
+
+
+
 /************* GENERAL NAV LIST ***************/
 .nav_list{
     /*background: rgba(34,144,201,1);*/
@@ -265,7 +267,6 @@ h1,h2,h3,h4,h5,#reloj,.numbers,textArea{
     border-radius: 2px;
     outline: none !important;
 }
-
 
 .MyButton_red{
 
