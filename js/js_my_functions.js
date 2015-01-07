@@ -51,9 +51,7 @@ function startTime() {
     s = checkTime(s);
     document.getElementById('reloj').innerHTML = dia  + "-" + mes + "-" + año + "  " + h + ":" + m + ":" + s;
     setTimeout("startTime()",1000);
-//    setInterval(function (){
-//        startTime();
-//    },1000);
+
 }
 
 function checkTime(i) {

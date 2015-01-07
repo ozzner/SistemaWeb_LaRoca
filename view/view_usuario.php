@@ -23,7 +23,6 @@ $distritos = $oDistrito->getAllData();
 
 
 <!--Alumno config-->
-<!--<link href="../css/bootstrap.css" rel="stylesheet" type="text/css"/>-->
 <link href="../vendor/bootstrap-fileinput-master/css/fileinput.min.css" rel="stylesheet" type="text/css"/>
 
 
@@ -91,43 +90,6 @@ $distritos = $oDistrito->getAllData();
             $("#listar_id").css({backgroundColor: '#8b0a50'});
         });
     </script>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

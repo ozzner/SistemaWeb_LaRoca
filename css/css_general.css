@@ -237,7 +237,7 @@ h1,h2,h3,h4,h5,#content_clock #profesorID{
     color: whitesmoke;
     height: 35px;
     width: 130px;
-    padding: 5px;
+    /*padding: 5px;*/
     border:solid 2px #02a902;
     /*    border-bottom: solid 3px #058705;*/
     text-decoration: none;
@@ -253,7 +253,7 @@ h1,h2,h3,h4,h5,#content_clock #profesorID{
 
 .MyButton_green:active{
     border-radius: 2px;
-    margin-top: 1px;
+    margin-top: 1px !important;
 }
 
 .MyButton_green:hover{
@@ -274,7 +274,7 @@ h1,h2,h3,h4,h5,#content_clock #profesorID{
     color: whitesmoke;
     height: 35px;
     width: 130px;
-    padding: 5px;
+    /*padding: 5px;*/
     border:solid 2px #ee2c2c;
     /*    border-bottom: solid 3px #058705;*/
     text-decoration: none;
@@ -290,7 +290,7 @@ h1,h2,h3,h4,h5,#content_clock #profesorID{
 
 .MyButton_red:active{
     border-radius: 2px;
-    margin-top: 1px;
+      margin-top: 1px !important;
 }
 
 .MyButton_red:hover{
@@ -312,7 +312,7 @@ h1,h2,h3,h4,h5,#content_clock #profesorID{
     color: whitesmoke;
     height: 35px;
     width: 130px;
-    padding: 5px;
+    /*padding: 5px;*/
     border:solid 2px #4876ff;
     /*    border-bottom: solid 3px #0066cc;*/
     text-decoration: none;
@@ -328,7 +328,7 @@ h1,h2,h3,h4,h5,#content_clock #profesorID{
 
 .MyButton_blue:active{
     border-radius: 2px;
-    margin-top: 1px;
+       margin-top: 1px !important;
 }
 
 .MyButton_blue:hover{
@@ -349,7 +349,7 @@ h1,h2,h3,h4,h5,#content_clock #profesorID{
     color: whitesmoke;
     height: 35px;
     width: 130px;
-    padding: 5px;
+    /*padding: 5px;*/
     border:solid 2px #FFA500;
     /*    border-bottom: solid 3px #0066cc;*/
     text-decoration: none;
@@ -365,7 +365,7 @@ h1,h2,h3,h4,h5,#content_clock #profesorID{
 
 .MyButton_yellow:active{
     border-radius: 2px;
-    margin-top: 1px;
+    margin-top: 1px !important;
 }
 
 .MyButton_yellow:hover{
