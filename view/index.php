@@ -31,6 +31,7 @@ if (isset($mensaje)) {
                 <div class="controles_form_login">
                     <input autocomplete="off" autofocus="true" id="usuario_login" class="MyInput" type="text" placeholder="Usuario" name="usuario"/>
                     <input  autocomplete="off" id="clave_login" class="MyInput" type="password" placeholder="Contraseña" name="contraseña"/><br>
+                    <br><br>
                     <input id="submit_login" class="MyButton_green" type="submit" value="Iniciar"/>
                     <div id="mensaje">
                         <label id="lblMensaje"> </label>
